@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
+  <title>Image resize example</title>
+</head>
+<body>
+
+  <h2>The original images</h2>
+  <p>The original image of 1200x533.</p>
+  <img id="input" src="input.jpg">
+
+  <h2>Specify width</h2>
+  <P>Resize to a width of 300px while keeping the aspect ratio.</P>
+  <img id="output1">
+
+  <h2>Specify height</h2>
+  <p>Resize to 200px high while keeping the aspect ratio.</p>
+  <img id="output2">
+
+  <h2>Resize by specifying width and height (cover)</h2>
+  <p>Resize to a width of 300px and a height of 200px so that the center is cut out while maintaining the aspect ratio.</p>
+  <img id="output3">
+
+  <h2>Resize by specifying width and height (contain)</h2>
+  <p>Resize it to a width of 512px and a height of 200px to fit the specified size while maintaining the aspect ratio.<br>Blank areas are filled with the background color (default black).</p>
+  <img id="output4">
+
+  <h2>Resize by specifying width and height (fill)</h2>
+  <p>Resize to the specified size without keeping the aspect ratio.</p>
+  <img id="output5">
+
+  <script type="module">
+    import scissor from '../dist/build.esm.js'
+
+    const input = document.querySelector('#input');
+    
+    // Specify width
+    const output1 = document.querySelector('#output1');
+    output1.src = scissor(input)
+      .resize(300)
+      .toBase64();
+
+    // Specify height
+    const output2 = document.querySelector('#output2');
+    output2.src = scissor(input)
+      .resize(null, 200)
+      .toBase64();
+
+    // Resize by specifying width and height (cover)
+    const output3 = document.querySelector('#output3');
+    output3.src = scissor(input)
+      .resize(300, 200, { fit: 'cover' })
+      .toBase64();
+
+    // Resize by specifying width and height (contain)
+    const output4 = document.querySelector('#output4');
+    output4.src = scissor(input)
+      .resize(300, 200, { fit: 'contain' })
+      .toBase64();
+
+    // Resize by specifying width and height (fill)
+    const output5 = document.querySelector('#output5');
+    output5.src = scissor(input)
+      .resize(300, 200)
+      .toBase64();
+  </script>
+</body>
+</html>

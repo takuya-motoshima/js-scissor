@@ -1,0 +1,75 @@
+{
+  "name": "js-scissor",
+  "version": "1.0.0",
+  "description": "This module is to convert large images in common formats to smaller, web-friendly JPEG, PNG and WebP images of varying dimensions.",
+  "main": "dist/build.common.js",
+  "module": "dist/build.esm.js",
+  "browser": "dist/build.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "watch": "rollup -c --watch",
+    "prewatch": "rm -rf dist types",
+    "build": "rollup -c",
+    "prebuild": "rm -rf dist types",
+    "test": "jest",
+    "start": "ts-node -r tsconfig-paths/register -P tsconfig.json -O '{\"module\":\"commonjs\"}' -e \"import * as index from '~/index';console.log(index);\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takuya-motoshima/js-scissor.git"
+  },
+  "files": [
+    "dist/*.js",
+    "types/*.d.ts",
+    "package.json",
+    "README.md",
+    "CHANGELOG.md",
+    "examples",
+    "screencap"
+  ],
+  "keywords": [
+    "browser",
+    "javascript",
+    "js",
+    "library",
+    "lib",
+    "module",
+    "typescript",
+    "ts",
+    "esm",
+    "es6",
+    "jpeg",
+    "png",
+    "webp",
+    "image",
+    "resize",
+    "thumbnail"
+  ],
+  "author": "Takuya Motoshima <developer.takuyamotoshima@gmail.com> (https://twitter.com/TakuyaMotoshima)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/takuya-motoshima/js-scissor/issues",
+    "email": "developer.takuyamotoshima@gmail.com"
+  },
+  "homepage": "https://github.com/takuya-motoshima/js-scissor#readme",
+  "devDependencies": {
+    "@rollup/plugin-replace": "^2.3.1",
+    "@types/jest": "^24.0.23",
+    "@types/js-cookie": "^2.2.6",
+    "fetch-mock": "^8.0.0",
+    "jest": "^24.9.0",
+    "rollup": "^1.27.2",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.3.0",
+    "rollup-plugin-typescript2": "^0.25.2",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.5.2",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "js-shared": "^1.0.2"
+  }
+}
