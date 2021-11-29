@@ -17,7 +17,7 @@
 <body>
   <div class="container-xxl my-4">
     <!-- <h1>Example of using js-scissor</h1> -->
-    <h4>Resize by specifying only the width.</h4>
+    <h4>Resize width.</h4>
     <div class="d-flex flex-row align-items-center mb-3">
       <img id="src1" src="img/sample1.jpg" class="m-2">
       <img src="img/allow-right.svg">
@@ -29,7 +29,7 @@ let src = document.querySelector(&#039;#src1&#039;);
 let dest = document.querySelector(&#039;#dest1&#039;);
 dest.src = (await scissor(src).resize(300)).toBase64();</code></pre>
 
-    <h4 class="mt-3">Resize by specifying only the height.</h4>
+    <h4 class="mt-3">Resize height.</h4>
     <div class="d-flex flex-row align-items-center mb-3">
       <img id="src2" src="img/sample2.png" class="m-2">
       <img src="img/allow-right.svg">

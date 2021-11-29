@@ -126,9 +126,9 @@
 
     <!--begin::Usage-->
     <h1 id="usage">Usage</h1>
-    <p>Resize by specifying only the width.</p>
-    <img src="https://raw.githubusercontent.com/takuya-motoshima/js-scissor/master/examples/screencap.png" class="img-fluid" style="width: 400px;">
 
+    <h2>Resize width.</h2>
+    <img src="https://raw.githubusercontent.com/takuya-motoshima/js-scissor/master/screencap/Resize width.png" class="img-fluid mb-3">
     <pre><code class="js">import scissor from &#039;js-scissor&#039;;
 
 // HTML: &lt;img id=&quot;src2&quot; src=&quot;img/sample2.png&quot;&gt;
@@ -136,6 +136,41 @@
 let src = document.querySelector(&#039;#src2&#039;);
 let dest = document.querySelector(&#039;#dest2&#039;);
 dest.src = (await scissor(src).resize(null, 100)).toBase64();</code></pre>
+
+    <h2>Resize height.</h2>
+    <img src="https://raw.githubusercontent.com/takuya-motoshima/js-scissor/master/screencap/Resize height.png" class="img-fluid mb-3">
+    <pre><code class="js">import scissor from &#039;js-scissor&#039;;
+
+// HTML: &lt;img id=&quot;src2&quot; src=&quot;img/sample2.png&quot;&gt;
+//       &lt;img id=&quot;dest2&quot;&gt;
+let src = document.querySelector(&#039;#src2&#039;);
+let dest = document.querySelector(&#039;#dest2&#039;);
+dest.src = (await scissor(src).resize(null, 100)).toBase64();</code></pre>
+    
+    <h2>Resize by specifying width and height (cover)</h2>
+    <p>Resize to a width of 300px and a height of 200px so that the center is cut out while maintaining the aspect ratio.</p>
+    <img src="https://raw.githubusercontent.com/takuya-motoshima/js-scissor/master/screencap/Resize Cover.png" class="img-fluid mb-3">
+    <pre><code class="js">import scissor from &#039;js-scissor&#039;;
+
+// HTML: &lt;img id=&quot;src3&quot; src=&quot;img/sample1.jpg&quot;&gt;
+//       &lt;img id=&quot;dest3&quot;&gt;
+let src = document.querySelector(&#039;#src3&#039;);
+let dest = document.querySelector(&#039;#dest3&#039;);
+dest.src = (await scissor(src).resize(100, 150, {fit: &#039;cover&#039;})).toBase64();</code></pre>
+
+    <h2>Resize by specifying width and height (contain)</h2>
+    <p>
+      Resize it to a width of 512px and a height of 200px to fit the specified size while maintaining the aspect ratio.<br>
+      Blank areas are filled with the background color (default black).
+    </p>
+    <img src="https://raw.githubusercontent.com/takuya-motoshima/js-scissor/master/screencap/Resize Contain.png" class="img-fluid mb-3">
+    <pre><code class="js">import scissor from &#039;js-scissor&#039;;
+
+// HTML: &lt;img id=&quot;src4&quot; src=&quot;img/sample1.jpg&quot;&gt;
+//       &lt;img id=&quot;dest4&quot;&gt;
+let src = document.querySelector(&#039;#src4&#039;);
+let dest = document.querySelector(&#039;#dest4&#039;);
+dest.src = (await scissor(src).resize(100, 150, {fit: &#039;cover&#039;})).toBase64();</code></pre>
     <!--end::Usage-->
 
     <!--begin::Comparison helper-->

@@ -5,13 +5,13 @@ import hljs from 'highlight.js';
 (async () => {
   // Highlight the code.
   hljs.highlightAll();
-
-  // Resize by specifying only the width.
+  
+  // Resize width.
   let src = document.querySelector('#src1');
   let dest = document.querySelector('#dest1');
   dest.src = (await scissor(src).resize(300)).toBase64();
 
-  // Resize by specifying only the height.
+  // Resize height.
   src = document.querySelector('#src2');
   dest = document.querySelector('#dest2');
   dest.src = (await scissor(src).resize(null, 100)).toBase64();
