@@ -3,68 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
-  <title>Image resize example</title>
+  <title>Example of using js-scissor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="node_modules/highlight.js/styles/default.css">
+  <style>
+    [src*='/allow-right.svg'] {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+    }
+  </style>
 </head>
 <body>
+  <div class="container-xxl my-4">
 
-  <h2>The original images</h2>
-  <p>The original image of 1200x533.</p>
-  <img id="input" src="input.jpg">
+    <h1>Example of using js-scissor</h1>
 
-  <h2>Specify width</h2>
-  <P>Resize to a width of 300px while keeping the aspect ratio.</P>
-  <img id="output1">
+    <h4>Resize by specifying only the width.</h4>
+    <div class="d-flex flex-row align-items-center mb-3">
+      <img id="srcImg1" src="img/sample1.jpg" class="m-2">
+      <img src="img/allow-right.svg">
+      <img id="destImg1" class="m-2">
+    </div>
+    HTML:<pre><code class="language-html">&lt;img id=&quot;srcImg1&quot; src=&quot;img/sample1.jpg&quot;&gt;
+&lt;img id=&quot;destImg1&quot;&gt;</code></pre>
+    JS:<pre><code class="language-javascript">let srcImg = document.querySelector(&#039;#srcImg1&#039;);
+let destImg = document.querySelector(&#039;#destImg1&#039;);
+destImg.src = (await scissor(srcImg).resize(300)).toBase64();</code></pre>
 
-  <h2>Specify height</h2>
-  <p>Resize to 200px high while keeping the aspect ratio.</p>
-  <img id="output2">
+    <h4 class="mt-3">Resize by specifying only the height.</h4>
+    <div class="d-flex flex-row align-items-center mb-3">
+      <img id="srcImg2" src="img/sample2.png" class="m-2">
+      <img src="img/allow-right.svg">
+      <img id="destImg2" class="m-2">
+    </div>
+    HTML:<pre><code class="language-html">&lt;img id=&quot;srcImg2&quot; src=&quot;img/sample2.png&quot;&gt;
+&lt;img id=&quot;destImg2&quot;&gt;</code></pre>
+    JS:<pre><code class="language-javascript">let srcImg = document.querySelector(&#039;#srcImg2&#039;);
+let destImg = document.querySelector(&#039;#destImg2&#039;);
+destImg.src = (await scissor(srcImg).resize(null, 100)).toBase64();</code></pre>
 
-  <h2>Resize by specifying width and height (cover)</h2>
-  <p>Resize to a width of 300px and a height of 200px so that the center is cut out while maintaining the aspect ratio.</p>
-  <img id="output3">
+    <h4 class="mt-3">Resize by specifying width and height (cover)</h4>
+    <p>Resize to a width of 300px and a height of 200px so that the center is cut out while maintaining the aspect ratio.</p>
+    <div class="d-flex flex-row align-items-center mb-3">
+      <img id="srcImg3" src="img/sample1.jpg" class="m-2">
+      <img src="img/allow-right.svg">
+      <img id="destImg3" class="m-2">
+    </div>
+    HTML:<pre><code class="language-html">&lt;img id=&quot;srcImg3&quot; src=&quot;img/sample1.jpg&quot;&gt;
+&lt;img id=&quot;destImg3&quot;&gt;</code></pre>
+    JS:<pre><code class="language-javascript">let srcImg = document.querySelector(&#039;#srcImg3&#039;);
+let destImg = document.querySelector(&#039;#destImg3&#039;);
+destImg.src = (await scissor(srcImg).resize(100, 150, {fit: &#039;cover&#039;})).toBase64();
+</code></pre>
 
-  <h2>Resize by specifying width and height (contain)</h2>
-  <p>Resize it to a width of 512px and a height of 200px to fit the specified size while maintaining the aspect ratio.<br>Blank areas are filled with the background color (default black).</p>
-  <img id="output4">
+    <h4 class="mt-3">Resize by specifying width and height (contain)</h4>
+    <p>Resize it to a width of 512px and a height of 200px to fit the specified size while maintaining the aspect ratio.<br>Blank areas are filled with the background color (default black).</p>
+    <div class="d-flex flex-row align-items-center mb-3">
+      <img id="srcImg4" src="img/sample1.jpg" class="m-2">
+      <img src="img/allow-right.svg">
+      <img id="destImg4" class="m-2">
+    </div>
+    HTML:<pre><code class="language-html">&lt;img id=&quot;srcImg4&quot; src=&quot;img/sample1.jpg&quot;&gt;
+&lt;img id=&quot;destImg4&quot;&gt;</code></pre>
+    JS:<pre><code class="language-javascript">let srcImg = document.querySelector(&#039;#srcImg4&#039;);
+let destImg = document.querySelector(&#039;#destImg4&#039;);
+destImg.src = (await scissor(srcImg).resize(100, 150, {fit: &#039;cover&#039;})).toBase64();
+</code></pre>
 
-  <h2>Resize by specifying width and height (fill)</h2>
-  <p>Resize to the specified size without keeping the aspect ratio.</p>
-  <img id="output5">
+    <h4 class="mt-3">Resize by specifying width and height (fill)</h4>
+    <p>Resize to the specified size without keeping the aspect ratio.</p>
+    <div class="d-flex flex-row align-items-center mb-3">
+      <img id="srcImg5" src="img/sample1.jpg" class="m-2">
+      <img src="img/allow-right.svg">
+      <img id="destImg5" class="m-2">
+    </div>
+    HTML:<pre><code class="language-html">&lt;img id=&quot;srcImg5&quot; src=&quot;img/sample1.jpg&quot;&gt;
+&lt;img id=&quot;destImg5&quot;&gt;</code></pre>
+    JS:<pre><code class="language-javascript">let srcImg = document.querySelector(&#039;#srcImg5&#039;);
+let destImg = document.querySelector(&#039;#destImg5&#039;);
+destImg.src = (await scissor(srcImg).resize(100, 150)).toBase64();
+</code></pre>
 
-  <script type="module">
-    import scissor from '../dist/build.esm.js'
+    <h4 class="mt-3">Resize the image read from the URL.</h4>
+    <div class="d-flex flex-row align-items-center mb-3">
+      <img src="img/sample2.png" class="m-2">
+      <img src="img/allow-right.svg">
+      <img id="destImg6" class="m-2">
+    </div>
+    HTML:<pre><code class="language-html">&lt;img id=&quot;srcImg5&quot; src=&quot;img/sample1.jpg&quot;&gt;
+&lt;img id=&quot;destImg6&quot;&gt;</code></pre>
+    JS:<pre><code class="language-javascript">let srcImg = document.querySelector(&#039;#srcImg5&#039;);
+let destImg = document.querySelector(&#039;#destImg6&#039;);
+destImg.src = (await scissor(srcImg).resize(100, 150)).toBase64();
+</code></pre>
+</div>
 
-    const input = document.querySelector('#input');
-    
-    // Specify width
-    const output1 = document.querySelector('#output1');
-    output1.src = scissor(input)
-      .resize(300)
-      .toBase64();
-
-    // Specify height
-    const output2 = document.querySelector('#output2');
-    output2.src = scissor(input)
-      .resize(null, 200)
-      .toBase64();
-
-    // Resize by specifying width and height (cover)
-    const output3 = document.querySelector('#output3');
-    output3.src = scissor(input)
-      .resize(300, 200, { fit: 'cover' })
-      .toBase64();
-
-    // Resize by specifying width and height (contain)
-    const output4 = document.querySelector('#output4');
-    output4.src = scissor(input)
-      .resize(300, 200, { fit: 'contain' })
-      .toBase64();
-
-    // Resize by specifying width and height (fill)
-    const output5 = document.querySelector('#output5');
-    output5.src = scissor(input)
-      .resize(300, 200)
-      .toBase64();
-  </script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+  <script src="dist/app.js"></script>
 </body>
 </html>

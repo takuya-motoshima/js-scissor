@@ -1,6 +1,6 @@
 # js-scissor
 
-This module is to convert large images in common formats to smaller, web-friendly JPEG, PNG and WebP images of varying dimensions.
+Resize the image and get the resized image in various formats such as Base64, Blob, image elements and so on.
 
 ## Installation
 
@@ -203,6 +203,14 @@ Returns the converted image as a Blob.
 
 There are some examples in "./examples" in this package.Here is the first one to get you started.
 
+## Author
+
+**Takuya Motoshima**
+
+* [github/takuya-motoshima](https://github.com/takuya-motoshima)
+* [twitter/TakuyaMotoshima](https://twitter.com/TakuyaMotoshima)
+* [facebook/takuya.motoshima.7](https://www.facebook.com/takuya.motoshima.7)
+
 ## License
 
-[MIT licensed](./LICENSE.txt)
+[MIT](LICENSE)

@@ -1,47 +1,57 @@
+/**
+ * Convert parameter canvas elements to base64, image elements, blobs.
+ */
 export default class {
-
-   private canvas: HTMLCanvasElement;
-   private format: 'image/webp'|'image/png'|'image/jpeg';
+  /**
+   * @type {HTMLCanvasElement} Source canvas image.
+   */
+  private cvs: HTMLCanvasElement;
 
   /**
-   * @param {HTMLCanvasElement} canvas
-   * @param {'image/webp'|'image/png'|'image/jpeg'} format
+   * @type {'image/webp'|'image/png'|'image/jpeg'} MIME type of the source canvas image.
    */
-  constructor(canvas: HTMLCanvasElement, format: 'image/webp'|'image/png'|'image/jpeg') {
-    this.canvas = canvas;
+  private format: 'image/webp'|'image/png'|'image/jpeg';
+
+  /**
+   * @param {HTMLCanvasElement} cvs Source canvas image.
+   * @param {'image/webp'|'image/png'|'image/jpeg'} format MIME type of the source canvas image.
+   */
+  constructor(cvs: HTMLCanvasElement, format: 'image/webp'|'image/png'|'image/jpeg') {
+    this.cvs = cvs;
     this.format = format;
   }
 
   /**
-   * Return Base64
+   * Return Base64.
    * 
-   * @return {HTMLImageElement}
+   * @return {string}
    */
   public toBase64(): string {
-    return this.canvas.toDataURL(this.format, 1.);
+    return this.cvs.toDataURL(this.format, 1.);
   }
 
   /**
-   * Return image element
+   * Return image element.
    * 
    * @return {HTMLImageElement}
    */
   public toImage(): HTMLImageElement {
-    var image = new Image();
-    image.src = this.toBase64();
-    return image;
+    const img = new Image();
+    img.src = this.toBase64();
+    return img;
   }
 
   /**
-   * Return Blob
+   * Return Blob.
    * 
    * @return {Blob}
    */
   public toBlob(): Blob {
     const base64 = this.toBase64();
-    const byteCharacters = atob(base64.replace(/^.*,/, ''));
-    const buffer = new Uint8Array(byteCharacters.length);
-    for (let i=0; i<byteCharacters.length; i++) buffer[i] = byteCharacters.charCodeAt(i);
-    return new Blob([ buffer.buffer ], { type: this.format });
+    const bin = atob(base64.replace(/^.*,/, ''));
+    const buf = new Uint8Array(bin.length);
+    for (let i=0; i<bin.length; i++)
+      buf[i] = bin.charCodeAt(i);
+    return new Blob([buf.buffer], {type: this.format});
   }
 }

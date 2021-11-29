@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reference | js-scissor</title>
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/agate.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link href="styles/docs.css" rel="stylesheet">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#sidenav" data-bs-offset="74">
+<header class="navbar navbar-expand-md navbar-light topnav fixed-top">
+  <nav class="container-xxl justify-content-start" aria-label="Main navigation">
+    <a class="navbar-brand p-0 me-2" href="./" aria-label="Bootstrap">
+      <img src="images/logo.svg" height="24">
+    </a>
+    <ul class="navbar-nav flex-row ms-auto">
+      <li class="nav-item col-auto">
+        <a class="nav-link p-2" href="https://github.com/takuya-motoshima" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" class="navbar-nav-svg d-inline-block align-text-top" viewBox="0 0 512 499.36" role="img"><title>GitHub</title><path fill="currentColor" fill-rule="evenodd" d="M256 0C114.64 0 0 114.61 0 256c0 113.09 73.34 209 175.08 242.9 12.8 2.35 17.47-5.56 17.47-12.34 0-6.08-.22-22.18-.35-43.54-71.2 15.49-86.2-34.34-86.2-34.34-11.64-29.57-28.42-37.45-28.42-37.45-23.27-15.84 1.73-15.55 1.73-15.55 25.69 1.81 39.21 26.38 39.21 26.38 22.84 39.12 59.92 27.82 74.5 21.27 2.33-16.54 8.94-27.82 16.25-34.22-56.84-6.43-116.6-28.43-116.6-126.49 0-27.95 10-50.8 26.35-68.69-2.63-6.48-11.42-32.5 2.51-67.75 0 0 21.49-6.88 70.4 26.24a242.65 242.65 0 0 1 128.18 0c48.87-33.13 70.33-26.24 70.33-26.24 14 35.25 5.18 61.27 2.55 67.75 16.41 17.9 26.31 40.75 26.31 68.69 0 98.35-59.85 120-116.88 126.32 9.19 7.9 17.38 23.53 17.38 47.41 0 34.22-.31 61.83-.31 70.23 0 6.85 4.61 14.81 17.6 12.31C438.72 464.97 512 369.08 512 256.02 512 114.62 397.37 0 256 0z"></path></svg>
+        </a>
+      </li>
+      <li class="nav-item col-auto">
+        <a class="nav-link p-2" href="https://twitter.com/TakuyaMotoshima" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" class="navbar-nav-svg d-inline-block align-text-top" viewBox="0 0 512 416.32" role="img"><title>Twitter</title><path fill="currentColor" d="M160.83 416.32c193.2 0 298.92-160.22 298.92-298.92 0-4.51 0-9-.2-13.52A214 214 0 0 0 512 49.38a212.93 212.93 0 0 1-60.44 16.6 105.7 105.7 0 0 0 46.3-58.19 209 209 0 0 1-66.79 25.37 105.09 105.09 0 0 0-181.73 71.91 116.12 116.12 0 0 0 2.66 24c-87.28-4.3-164.73-46.3-216.56-109.82A105.48 105.48 0 0 0 68 159.6a106.27 106.27 0 0 1-47.53-13.11v1.43a105.28 105.28 0 0 0 84.21 103.06 105.67 105.67 0 0 1-47.33 1.84 105.06 105.06 0 0 0 98.14 72.94A210.72 210.72 0 0 1 25 370.84a202.17 202.17 0 0 1-25-1.43 298.85 298.85 0 0 0 160.83 46.92"></path></svg>
+        </a>
+      </li>
+      <li class="nav-item col-auto">
+        <a class="nav-link p-2" href="https://www.facebook.com/takuya.motoshima.7" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" class="navbar-nav-svg d-inline-block align-text-top" viewBox="0 0 167.657 167.657" role="img"><title>Facebook</title><path fill="currentColor" d="M83.829,0.349C37.532,0.349,0,37.881,0,84.178c0,41.523,30.222,75.911,69.848,82.57v-65.081H49.626 v-23.42h20.222V60.978c0-20.037,12.238-30.956,30.115-30.956c8.562,0,15.92,0.638,18.056,0.919v20.944l-12.399,0.006 c-9.72,0-11.594,4.618-11.594,11.397v14.947h23.193l-3.025,23.42H94.026v65.653c41.476-5.048,73.631-40.312,73.631-83.154 C167.657,37.881,130.125,0.349,83.829,0.349z"/></svg>
+        </a>
+      </li>
+    </ul>
+    <button id="sidebarToggle" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle docs navigation">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi" fill="currentColor" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+      </svg>
+    </button>
+  </nav>
+</header>
+<div class="container-xxl my-md-4 layout">
+  <aside class="sidebar" id="sidebar">
+    <nav class="sidenav align-items-start navbar navbar-light py-0" id="sidenav">
+      <nav class="nav nav-pills flex-column flex-nowrap mb-0 py-3 pt-md-1">
+        <a class="nav-link" href="#introduction">Introduction</a>
+        <a class="nav-link" href="#installation">Installation</a>
+        <a class="nav-link" href="#browser-usage">Browser usage</a>
+        <a class="nav-link" href="#usage">Usage</a>
+        <a class="nav-link" href="#comparison-helper">Comparison helper</a>
+        <nav class="nav nav-pills flex-column flex-nowrap fw-normal small">
+          <a class="nav-link" href="#comparison-helper-summary">Summary</a>
+          <a class="nav-link" href="#comparison-helper-opr">{{opr}}</a>
+          <a class="nav-link" href="#comparison-helper-eq">{{eq}}</a>
+          <a class="nav-link" href="#comparison-helper-eqw">{{eqw}}</a>
+          <a class="nav-link" href="#comparison-helper-neq">{{neq}}</a>
+          <a class="nav-link" href="#comparison-helper-neqw">{{neqw}}</a>
+          <a class="nav-link" href="#comparison-helper-lt">{{lt}}</a>
+          <a class="nav-link" href="#comparison-helper-gt">{{gt}}</a>
+          <a class="nav-link" href="#comparison-helper-lte">{{lte}}</a>
+          <a class="nav-link" href="#comparison-helper-gte">{{gte}}</a>
+          <a class="nav-link" href="#comparison-helper-ifx">{{ifx}}</a>
+          <a class="nav-link" href="#comparison-helper-not">{{not}}</a>
+          <a class="nav-link" href="#comparison-helper-empty">{{empty}}</a>
+          <a class="nav-link" href="#comparison-helper-count">{{count}}</a>
+          <a class="nav-link" href="#comparison-helper-and">{{and}}</a>
+          <a class="nav-link" href="#comparison-helper-or">{{or}}</a>
+          <a class="nav-link" href="#comparison-helper-coalesce">{{coalesce}}</a>
+          <a class="nav-link" href="#comparison-helper-includes">{{includes}}</a>
+        </nav>
+        <a class="nav-link" href="#date-helper">Date helper</a>
+        <nav class="nav nav-pills flex-column flex-nowrap fw-normal small">
+          <a class="nav-link" href="#date-helper-summary">Summary</a>
+          <a class="nav-link" href="#date-helper-format-date">{{formatDate}}</a>
+        </nav>
+        <a class="nav-link" href="#html-helper">HTML helper</a>
+        <nav class="nav nav-pills flex-column flex-nowrap fw-normal small">
+          <a class="nav-link" href="#html-helper-summary">Summary</a>
+          <a class="nav-link" href="#html-helper-class-if">{{classIf}}</a>
+          <a class="nav-link" href="#html-helper-selected-if">{{selectedIf}}</a>
+          <a class="nav-link" href="#html-helper-checked-if">{{checkedIf}}</a>
+          <a class="nav-link" href="#html-helper-options">{{options}}</a>
+        </nav>
+        <a class="nav-link" href="#math-helper">Math helper</a>
+        <nav class="nav nav-pills flex-column flex-nowrap fw-normal small">
+          <a class="nav-link" href="#math-helper-summary">Summary</a>
+          <a class="nav-link" href="#math-helper-add">{{add}}</a>
+          <a class="nav-link" href="#math-helper-sub">{{sub}}</a>
+          <a class="nav-link" href="#math-helper-ceil">{{ceil}}</a>
+          <a class="nav-link" href="#math-helper-floor">{{floor}}</a>
+          <a class="nav-link" href="#math-helper-abs">{{abs}}</a>
+        </nav>
+        <a class="nav-link" href="#string-helper">String helper</a>
+        <nav class="nav nav-pills flex-column flex-nowrap fw-normal small">
+          <a class="nav-link" href="#string-helper-summary">Summary</a>
+          <a class="nav-link" href="#string-helper-slice">{{slice}}</a>
+          <a class="nav-link" href="#string-helper-nltobr">{{nltobr}}</a>
+          <a class="nav-link" href="#string-helper-sprintf">{{sprintf}}</a>
+          <a class="nav-link" href="#string-helper-lowercase">{{lowercase}}</a>
+          <a class="nav-link" href="#string-helper-uppercase">{{uppercase}}</a>
+          <a class="nav-link" href="#string-helper-concat">{{concat}}</a>
+          <a class="nav-link" href="#string-helper-join">{{join}}</a>
+        </nav>
+      </nav>
+    </nav>
+  </aside>
+  <div class="sidebar-overlay"></div>
+  <main class="main order-1 ps-lg-4">
+    <!--begin::Introduction-->
+    <h1 id="introduction">Introduction</h1>
+    <p>Resize the image and get the resized image in various formats such as Base64, Blob, image elements and so on.</p>
+    <!--end::Introduction-->
+    
+    <!--begin::Installation-->
+    <h1 id="installation">Installation</h1>
+    <p>Install with <a href="https://www.npmjs.com/" rel="nofollow" target="_blank">npm</a>:</p>
+    <pre><code class="bash">npm install --save js-scissor</code></pre>
+    <!--end::Installation-->
+
+    <!--begin::Browser usage-->
+    <h1 id="browser-usage">Browser usage</h1>
+    <p>See how to use <a href="https://github.com/takuya-motoshima/js-scissor/tree/main/examples" target="_blank">js-scissor in the browser</a>.</p>
+    <!--end::Browser usage-->
+
+    <!--begin::Usage-->
+    <h1 id="usage">Usage</h1>
+    <p>Exporting "js-scissor" will return an extended "Handlebars" with built-in helpers and more.</p>
+    <pre><code class="bash">import scissor from 'js-scissor';</code></pre>
+    <!--end::Usage-->
+
+    <!--begin::Comparison helper-->
+    <h1 id="comparison-helper">Comparison helper</h1>
+
+    <!--begin::Summary-->
+    <h2 id="comparison-helper-summary">Summary</h2>
+    <table class="table table-bordered table-striped">
+      <thead class="table-light">
+        <tr class="text-nowrap">
+          <th>Helper</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="min-w-150px"><a href="#comparison-helper-opr">opr</a></td>
+          <td class="min-w-200px w-100">Compare two values using operators.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#comparison-helper-eq">eq</a></td>
+          <td class="min-w-200px w-100">Strict equality <code>===</code>.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#comparison-helper-eqw">eqw</a></td>
+          <td class="min-w-200px w-100">Equality <code>==</code>.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#comparison-helper-neq">neq</a></td>
+          <td class="min-w-200px w-100">Strict inequality <code>!==</code>.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#comparison-helper-neqw">neqw</a></td>
+          <td class="min-w-200px w-100">Inequality <code>!=</code>.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#comparison-helper-lt">lt</a></td>
+          <td class="min-w-200px w-100">Less than <code>&lt;</code>.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#comparison-helper-gt">gt</a></td>
+          <td class="min-w-200px w-100">Greater than <code>&gt;</code>.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#comparison-helper-lte">lte</a></td>
+          <td class="min-w-200px w-100">Less than or equal <code>&lt;=</code>.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#comparison-helper-gte">gte</a></td>
+          <td class="min-w-200px w-100">Greater than or equal <code>&gt;=</code>.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#comparison-helper-ifx">ifx</a></td>
+          <td class="min-w-200px w-100">Imitates conditional operator <code>?:</code>.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#comparison-helper-not">not</a></td>
+          <td class="min-w-200px w-100">Not <code>!</code>.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#comparison-helper-empty">empty</a></td>
+          <td class="min-w-200px w-100">Check if an array is empty.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#comparison-helper-count">count</a></td>
+          <td class="min-w-200px w-100">Length of an array.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#comparison-helper-and">and</a></td>
+          <td class="min-w-200px w-100">Logical AND operation.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#comparison-helper-or">or</a></td>
+          <td class="min-w-200px w-100">Logical OR operation.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#comparison-helper-coalesce">coalesce</a></td>
+          <td class="min-w-200px w-100">Returns first non-falsy value from list of parameters.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#comparison-helper-includes">includes</a></td>
+          <td class="min-w-200px w-100">Check for a value inside an array.</td>
+        </tr>
+      </tbody>
+    </table>
+    <!--end::Summary-->
+
+    <!--begin::opr-->
+    <h2 id="comparison-helper-opr" class="text-primary">{{opr}}</h2>
+    <p>Compare two values using operators.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
+      <li><code>&#039;==&#039;|&#039;===&#039;|&#039;!=&#039;|&#039;!==&#039;|&#039;&lt;&#039;|&#039;&gt;&#039;|&#039;&lt;=&#039;|&#039;&gt;=&#039;</code> <strong>opr</strong>  The operator to use. Operators must be enclosed in quotes: `&quot;&gt;&quot;`, `&quot;=&quot;`, `&quot;&lt;=&quot;`, and so on.</li>
+      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: false
+hbs.compile(&quot;{{opr a &#039;===&#039; b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
+
+// Output: false
+hbs.compile(&quot;{{#if (opr a &#039;===&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
+
+// Output: true
+hbs.compile(&quot;{{opr a &#039;==&#039; b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
+
+// Output: true
+hbs.compile(&quot;{{#if (opr a &#039;==&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
+
+// Output: true
+hbs.compile(&quot;{{opr a &#039;!==&#039; b}}&quot;)({&quot;a&quot;:4,&quot;b&quot;:3});
+
+// Output: true
+hbs.compile(&quot;{{#if (opr a &#039;!==&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:4,&quot;b&quot;:3});
+
+// Output: false
+hbs.compile(&quot;{{opr a &#039;!=&#039; b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
+
+// Output: false
+hbs.compile(&quot;{{#if (opr a &#039;!=&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
+
+// Output: true
+hbs.compile(&quot;{{opr a &#039;&lt;&#039; b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
+
+// Output: true
+hbs.compile(&quot;{{#if (opr a &#039;&lt;&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
+
+// Output: false
+hbs.compile(&quot;{{opr a &#039;&gt;&#039; b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
+
+// Output: false
+hbs.compile(&quot;{{#if (opr a &#039;&gt;&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
+
+// Output: true
+hbs.compile(&quot;{{opr a &#039;&lt;=&#039; b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
+
+// Output: true
+hbs.compile(&quot;{{#if (opr a &#039;&lt;=&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
+
+// Output: true
+hbs.compile(&quot;{{opr a &#039;&gt;=&#039; b}}&quot;)({&quot;a&quot;:3,&quot;b&quot;:3});
+
+// Output: true
+hbs.compile(&quot;{{#if (opr a &#039;&gt;=&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:3,&quot;b&quot;:3});
+</code></pre>
+    <!--end::opr-->
+
+    <!--begin::eq-->
+    <h2 id="comparison-helper-eq" class="text-primary">{{eq}}</h2>
+    <p>Determine whether or not two values are equal (===).</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
+      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: false
+hbs.compile(&quot;{{eq a b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
+
+// Output: false
+hbs.compile(&quot;{{#if (eq a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});</code></pre>
+    <!--end::eq-->
+
+    <!--begin::eqw-->
+    <h2 id="comparison-helper-eqw" class="text-primary">{{eqw}}</h2>
+    <p>Determine whether or not two values are equal (==) i.e weak checking.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
+      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: true
+hbs.compile(&quot;{{eqw a b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
+
+// Output: true
+hbs.compile(&quot;{{#if (eqw a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});</code></pre>
+    <!--end::eqw-->
+    
+    <!--begin::neq-->
+    <h2 id="comparison-helper-neq" class="text-primary">{{neq}}</h2>
+    <p>Determine whether or not two values are not equal (!==).</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
+      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: true
+hbs.compile(&quot;{{neq a b}}&quot;)({&quot;a&quot;:4,&quot;b&quot;:3});
+
+// Output: true
+hbs.compile(&quot;{{#if (neq a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:4,&quot;b&quot;:3});</code></pre>
+    <!--end::neq-->
+
+    <!--begin::neqw-->
+    <h2 id="comparison-helper-neqw" class="text-primary">{{neqw}}</h2>
+    <p>Determine whether or not two values are not equal (!=) weak checking.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
+      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: false
+hbs.compile(&quot;{{neqw a b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
+
+// Output: false
+hbs.compile(&quot;{{#if (neqw a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});</code></pre>
+    <!--end::neqw-->
+
+    <!--begin::lt-->
+    <h2 id="comparison-helper-lt" class="text-primary">{{lt}}</h2>
+    <p>Check for less than condition (a &lt; b).</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
+      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: true
+hbs.compile(&quot;{{lt a b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
+
+// Output: true
+hbs.compile(&quot;{{#if (lt a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});</code></pre>
+    <!--end::lt-->
+
+    <!--begin::gt-->
+    <h2 id="comparison-helper-gt" class="text-primary">{{gt}}</h2>
+    <p>Check for greater than condition (a &gt; b).</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
+      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: false
+hbs.compile(&quot;{{gt a b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
+
+// Output: false
+hbs.compile(&quot;{{#if (gt a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});</code></pre>
+    <!--end::gt-->
+
+    <!--begin::lte-->
+    <h2 id="comparison-helper-lte" class="text-primary">{{lte}}</h2>
+    <p>Check for less than or equals condition (a &lt;= b).</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
+      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: false
+hbs.compile(&quot;{{lte a &#039;&lt;=&#039; b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
+
+// Output: false
+hbs.compile(&quot;{{#if (lte a &#039;&lt;=&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});</code></pre>
+    <!--end::lte-->
+
+    <!--begin::gte-->
+    <h2 id="comparison-helper-gte" class="text-primary">{{gte}}</h2>
+    <p>Check for greater than or equals condition (a &gt;= b).</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
+      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: false
+hbs.compile(&quot;{{gte a &#039;&gt;=&#039; b}}&quot;)({&quot;a&quot;:3,&quot;b&quot;:3});
+
+// Output: false
+hbs.compile(&quot;{{#if (gte a &#039;&gt;=&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:3,&quot;b&quot;:3});</code></pre>
+    <!--end::gte-->
+
+    <!--begin::ifx-->
+    <h2 id="comparison-helper-ifx" class="text-primary">{{ifx}}</h2>
+    <p>Helper to imitate the ternary &#039;?:&#039; conditional operator.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>any</code> <strong>val1</strong> Value to return when the condition holds true.</li>
+      <li><code>any</code> <strong>val2</strong> Value to return when the condition is false (Optional).</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: foo
+hbs.compile(&quot;{{ifx true a b}}&quot;)({&quot;a&quot;:&quot;foo&quot;,&quot;b&quot;:&quot;bar&quot;});
+
+// Output: bar
+hbs.compile(&quot;{{ifx false a b}}&quot;)({&quot;a&quot;:&quot;foo&quot;,&quot;b&quot;:&quot;bar&quot;});</code></pre>
+    <!--end::ifx-->
+
+    <!--begin::not-->
+    <h2 id="comparison-helper-not" class="text-primary">{{not}}</h2>
+    <p>Logical NOT of any expression.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>any</code> <strong>expr</strong> Any expression.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: false
+hbs.compile(&quot;{{not true}}&quot;)();
+
+// Output: false
+hbs.compile(&quot;{{#if (not true)}}true{{else}}false{{/if}}&quot;)();
+
+// Output: true
+hbs.compile(&quot;{{not false}}&quot;)();
+
+// Output: true
+hbs.compile(&quot;{{#if (not false)}}true{{else}}false{{/if}}&quot;)();</code></pre>
+    <!--end::not-->
+
+    <!--begin::empty-->
+    <h2 id="comparison-helper-empty" class="text-primary">{{empty}}</h2>
+    <p>Check if an array is empty.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>any[]</code> <strong>coll</strong> Array/object to be checked.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: true
+hbs.compile(&quot;{{empty coll}}&quot;)({&quot;coll&quot;:[]});
+
+// Output: true
+hbs.compile(&quot;{{#if (empty coll)}}true{{else}}false{{/if}}&quot;)({&quot;coll&quot;:[]});
+
+// Output: false
+hbs.compile(&quot;{{empty coll}}&quot;)({&quot;coll&quot;:[&quot;foo&quot;]});
+
+// Output: false
+hbs.compile(&quot;{{#if (empty coll)}}true{{else}}false{{/if}}&quot;)({&quot;coll&quot;:[&quot;foo&quot;]});</code></pre>
+    <!--end::empty-->
+
+    <!--begin::count-->
+    <h2 id="comparison-helper-count" class="text-primary">{{count}}</h2>
+    <p>Determine the length of an array.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>any[]</code> <strong>coll</strong> Array whose elements to be counted.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: 2
+hbs.compile(&quot;{{count coll}}&quot;)({&quot;coll&quot;:[&quot;foo&quot;,&quot;bar&quot;]});</code></pre>
+    <!--end::count-->
+
+    <!--begin::and-->
+    <h2 id="comparison-helper-and" class="text-primary">{{and}}</h2>
+    <p>Returns the boolean AND of two or more parameters passed i.e it is true iff all the parameters are true.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>...any</code> <strong>args</strong> Any number of boolean parameters.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: true
+hbs.compile(&quot;{{and a b}}&quot;)({&quot;a&quot;:true,&quot;b&quot;:true});
+
+// Output: true
+hbs.compile(&quot;{{#if (and a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:true,&quot;b&quot;:true});
+
+// Output: false
+hbs.compile(&quot;{{and a b}}&quot;)({&quot;a&quot;:false,&quot;b&quot;:true});
+
+// Output: false
+hbs.compile(&quot;{{#if (and a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:false,&quot;b&quot;:true});</code></pre>
+    <!--end::and-->
+
+    <!--begin::or-->
+    <h2 id="comparison-helper-or" class="text-primary">{{or}}</h2>
+    <p>Returns the boolean OR of two or more parameters passed i.e it is true if any of the parameters is true.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>...any</code> <strong>args</strong> Any number of boolean parameters.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: true
+hbs.compile(&quot;{{or a b}}&quot;)({&quot;a&quot;:true,&quot;b&quot;:false});
+
+// Output: true
+hbs.compile(&quot;{{#if (or a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:true,&quot;b&quot;:false});
+
+// Output: false
+hbs.compile(&quot;{{or a b}}&quot;)({&quot;a&quot;:false,&quot;b&quot;:false});
+
+// Output: false
+hbs.compile(&quot;{{#if (or a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:false,&quot;b&quot;:false});</code></pre>
+    <!--end::or-->
+
+    <!--begin::coalesce-->
+    <h2 id="comparison-helper-coalesce" class="text-primary">{{coalesce}}</h2>
+    <p>Returns the first non-falsy value from the parameter list.<br>Checks for the first non-false parameter.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>...any</code> <strong>args</strong> Any number of parameters.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: foo
+hbs.compile(&quot;{{coalesce a b c}}&quot;)({&quot;a&quot;:&quot;foo&quot;,&quot;b&quot;:&quot;bar&quot;,&quot;c&quot;:&quot;baz&quot;});
+
+// Output: bar
+hbs.compile(&quot;{{coalesce a b c}}&quot;)({&quot;a&quot;:&quot;&quot;,&quot;b&quot;:&quot;bar&quot;,&quot;c&quot;:&quot;baz&quot;});
+</code></pre>
+    <!--end::or-->
+
+    <!--begin::includes-->
+    <h2 id="comparison-helper-includes" class="text-primary">{{includes}}</h2>
+    <p>Returns true if the array contains a particular value, false if it does not.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>any[]</code> <strong>coll</strong> The array.</li>
+      <li><code>any</code> <strong>val</strong> The value to search for.</li>
+      <li><code>boolean</code> <strong>strict</strong> FALSE for non-strict checking. TRUE by default.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: true
+hbs.compile(&quot;{{includes coll a}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:2});
+
+// Output: true
+hbs.compile(&quot;{{#if (includes coll a)}}true{{else}}false{{/if}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:2});
+
+// Output: false
+hbs.compile(&quot;{{includes coll a}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:10});
+
+// Output: false
+hbs.compile(&quot;{{#if (includes coll a)}}true{{else}}false{{/if}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:10});
+
+// Output: false
+hbs.compile(&quot;{{includes coll a}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:&quot;3&quot;});
+
+// Output: false
+hbs.compile(&quot;{{#if (includes coll a)}}true{{else}}false{{/if}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:&quot;3&quot;});
+
+// Output: true
+hbs.compile(&quot;{{includes coll a strict}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:&quot;3&quot;,&quot;strict&quot;:false});
+
+// Output: true
+hbs.compile(&quot;{{#if (includes coll a strict)}}true{{else}}false{{/if}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:&quot;3&quot;,&quot;strict&quot;:false});</code></pre>
+    <!--end::includes-->
+    <!--end::Comparison helper-->
+
+    <!--begin::Date helper-->
+    <h1 id="date-helper">Date helper</h1>
+
+    <!--begin::Summary-->
+    <h2 id="date-helper-summary">Summary</h2>
+    <table class="table table-bordered table-striped">
+      <thead class="table-light">
+        <tr class="text-nowrap">
+          <th>Helper</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="min-w-150px"><a href="#date-helper-format-date">formatDate</a></td>
+          <td class="min-w-200px w-100">Use moment to format the date.</td>
+        </tr>
+      </tbody>
+    </table>
+    <!--end::Summary-->
+
+    <!--begin::includes-->
+    <h2 id="date-helper-format-date" class="text-primary">{{formatDate}}</h2>
+    <p>Use moment to format the date.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>string</code> <strong>format</strong> A format string based on <a href="https://momentjs.com/docs/#/parsing/string-format/" target="_blank">moment</a>.</li>
+      <li><code>string</code> <strong>date</strong> Date string to format.</li>
+      <li><code>string|string[]</code> <strong>locale</strong> Language or language-country locale string (or array of strings) available in <a href="https://github.com/moment/moment/tree/develop/locale" target="_blank">https://github.com/moment/moment/tree/develop/locale</a>.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: 2021/10/25
+hbs.compile(&quot;{{formatDate &#039;YYYY/MM/DD&#039; date}}&quot;)({&quot;date&quot;:&quot;2021-10-24T23:11:14.275Z&quot;});
+
+// Output: 2021/10/25
+hbs.compile(&quot;{{formatDate &#039;YYYY/MM/DD&#039; date &#039;jp&#039;}}&quot;)({&quot;date&quot;:&quot;2021-10-24T23:11:14.275Z&quot;});
+
+// Output: 2021/10/25
+hbs.compile(&quot;{{formatDate &#039;YYYY/MM/DD&#039; date &#039;es&#039;}}&quot;)({&quot;date&quot;:&quot;2021-10-24T23:11:14.275Z&quot;});</code></pre>
+    <!--end::includes-->
+    <!--begin::Date helper-->
+  
+    <!--begin::HTML helper-->
+    <h1 id="html-helper">HTML helper</h1>
+    <!--begin::Summary-->
+    <h2 id="html-helper-summary">Summary</h2>
+    <table class="table table-bordered table-striped">
+      <thead class="table-light">
+        <tr class="text-nowrap">
+          <th>Helper</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="min-w-150px"><a href="#html-helper-class-if">classIf</a></td>
+          <td class="min-w-200px w-100">Set the CSS classes if the condition is true.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#html-helper-selected-if">selectedIf</a></td>
+          <td class="min-w-200px w-100">Sets the selected attribute if the condition is true.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#html-helper-checked-if">checkedIf</a></td>
+          <td class="min-w-200px w-100">Sets the checked attribute if the condition is true.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#html-helper-options">options</a></td>
+          <td class="min-w-200px w-100">Generates a select drop-down option list.</td>
+        </tr>
+      </tbody>
+    </table>
+    <!--end::Summary-->
+
+    <!--begin::classIf-->
+    <h2 id="html-helper-class-if" class="text-primary">{{classIf}}</h2>
+    <p>Set the CSS classes if the condition is true.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>boolean</code> <strong>expr</strong> Condition to be checked.</li>
+      <li><code>string</code> <strong>cls</strong> CSS class to set if the condition is true.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: foo
+hbs.compile(&quot;{{classIf expr &#039;foo&#039;}}&quot;)({&quot;expr&quot;:true});</code></pre>
+    <!--end::classIf-->
+
+    <!--begin::selectedIf-->
+    <h2 id="html-helper-selected-if" class="text-primary">{{selectedIf}}</h2>
+    <p>Sets the selected attribute if the condition is true.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>boolean</code> <strong>expr</strong> Condition to be checked.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: selected
+hbs.compile(&quot;{{selectedIf expr}}&quot;)({&quot;expr&quot;:true});</code></pre>
+    <!--end::selectedIf-->
+
+    <!--begin::checkedIf-->
+    <h2 id="html-helper-checked-if" class="text-primary">{{checkedIf}}</h2>
+    <p>Sets the checked attribute if the condition is true.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>boolean</code> <strong>expr</strong> Condition to be checked.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: checked
+hbs.compile(&quot;{{checkedIf expr}}&quot;)({&quot;expr&quot;:true});</code></pre>
+    <!--end::checkedIf-->
+
+    <!--begin::options-->
+    <h2 id="html-helper-options" class="text-primary">{{options}}</h2>
+    <p>Generates a select drop-down option list.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>{[key: string]: string}[]</code> <strong>data</strong> List of data.</li>
+      <li><code>{value: string, text: string}</code> <strong>opts</strong> Key names for the selected and displayed values of option in the data element (Optional).</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: &lt;option value=&quot;1&quot;&gt;foo&lt;/option&gt;
+//         &lt;option value=&quot;2&quot; selected&gt;bar&lt;/option&gt;
+hbs.compile(&quot;{{{options data selected=&#039;2&#039;}}}&quot;)({&quot;data&quot;:[{&quot;value&quot;:1,&quot;text&quot;:&quot;foo&quot;},{&quot;value&quot;:2,&quot;text&quot;:&quot;bar&quot;}]});
+
+// Output: &lt;option value=&quot;392&quot; selected&gt;JAPAN&lt;/option&gt;
+//         &lt;option value=&quot;840&quot;&gt;UNITED STATES&lt;/option&gt;
+hbs.compile(&quot;{{{options data selected=&#039;392&#039; value=&#039;code&#039; text=&#039;name&#039;}}}&quot;)({&quot;data&quot;:[{&quot;code&quot;:392,&quot;name&quot;:&quot;JAPAN&quot;},{&quot;code&quot;:840,&quot;name&quot;:&quot;UNITED STATES&quot;}]});</code></pre>
+    <!--end::options-->
+    <!--end::HTML helper-->
+
+    <!--begin::Math helper-->
+    <h1 id="math-helper">Math helper</h1>
+    <!--begin::Summary-->
+    <h2 id="math-helper-summary">Summary</h2>
+    <table class="table table-bordered table-striped">
+      <thead class="table-light">
+        <tr class="text-nowrap">
+          <th>Helper</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="min-w-150px"><a href="#math-helper-add">add</a></td>
+          <td class="min-w-200px w-100">Calculates the sum of two numbers.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#math-helper-sub">sub</a></td>
+          <td class="min-w-200px w-100">Calculates the difference of the given values.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#math-helper-ceil">ceil</a></td>
+          <td class="min-w-200px w-100">Round up the value.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#math-helper-floor">floor</a></td>
+          <td class="min-w-200px w-100">Rounds down a number.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#math-helper-abs">abs</a></td>
+          <td class="min-w-200px w-100">Returns an absolute value.</td>
+        </tr>
+      </tbody>
+    </table>
+    <!--end::Summary-->
+
+    <!--begin::add-->
+    <h2 id="math-helper-add" class="text-primary">{{add}}</h2>
+    <p>Calculates the sum of two numbers.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>number|string</code> <strong>val1</strong> The first number.</li>
+      <li><code>number|string</code> <strong>val2</strong> The second number.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: 3
+hbs.compile(&quot;{{add a b}}&quot;)({&quot;a&quot;:1,&quot;b&quot;:2});</code></pre>
+    <!--end::add-->
+
+    <!--begin::sub-->
+    <h2 id="math-helper-sub" class="text-primary">{{sub}}</h2>
+    <p>Calculates the difference of the given values.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>number|string</code> <strong>val1</strong> The first number.</li>
+      <li><code>number|string</code> <strong>val2</strong> The second number.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: 3
+hbs.compile(&quot;{{sub a b}}&quot;)({&quot;a&quot;:5,&quot;b&quot;:2});</code></pre>
+    <!--end::sub-->
+
+    <!--begin::ceil-->
+    <h2 id="math-helper-ceil" class="text-primary">{{ceil}}</h2>
+    <p>Round up the value.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>number|string</code> <strong>val</strong> Number to be rounded to nearest greater integer.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: 6
+hbs.compile(&quot;{{ceil a}}&quot;)({&quot;a&quot;:5.6});</code></pre>
+    <!--end::ceil-->
+
+    <!--begin::floor-->
+    <h2 id="math-helper-floor" class="text-primary">{{floor}}</h2>
+    <p>Rounds down a number.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>number|string</code> <strong>val</strong> Number to be rounded to nearest lower integer.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: 5
+hbs.compile(&quot;{{floor a}}&quot;)({&quot;a&quot;:5.6});</code></pre>
+    <!--end::floor-->
+
+    <!--begin::abs-->
+    <h2 id="math-helper-abs" class="text-primary">{{abs}}</h2>
+    <p>Returns an absolute value.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>number|string</code> <strong>val</strong> Number to perform absolute value operation on.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: 5.6
+hbs.compile(&quot;{{abs a b}}&quot;)({&quot;a&quot;:-5.6});</code></pre>
+    <!--end::abs-->
+    <!--end::Math helper-->
+  
+    <!--begin::String helper-->
+    <h1 id="string-helper">String helper</h1>
+    <!--begin::Summary-->
+    <h2 id="string-helper-summary">Summary</h2>
+    <table class="table table-bordered table-striped">
+      <thead class="table-light">
+        <tr class="text-nowrap">
+          <th>Helper</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="min-w-150px"><a href="#string-helper-slice">slice</a></td>
+          <td class="min-w-200px w-100">Extract a portion of a string.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#string-helper-nltobr">nltobr</a></td>
+          <td class="min-w-200px w-100">Replace \n with &lt;br&gt; tags.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#string-helper-sprintf">sprintf</a></td>
+          <td class="min-w-200px w-100">
+            Returns a string produced according to the formatting string format.<br>
+            It uses sprintf-js internally.<br>
+            Check <a href="https://github.com/alexei/sprintf.js" target="_blank">https://github.com/alexei/sprintf.js</a> for more information.
+          </td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#string-helper-lowercase">lowercase</a></td>
+          <td class="min-w-200px w-100">Changes the string to lowercase.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#string-helper-uppercase">uppercase</a></td>
+          <td class="min-w-200px w-100">Changes the string to uppercase.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#string-helper-concat">concat</a></td>
+          <td class="min-w-200px w-100">Concat two or more strings.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#string-helper-join">join</a></td>
+          <td class="min-w-200px w-100">Join the elements of an array using a delimeter.</td>
+        </tr>
+      </tbody>
+    </table>
+    <!--end::Summary-->
+
+    <!--begin::slice-->
+    <h2 id="string-helper-slice" class="text-primary">{{slice}}</h2>
+    <p>Extract a portion of a string.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>string</code> <strong>val</strong> Target string.</li>
+      <li><code>number</code> <strong>beginIdx</strong> The zero-based index at which to begin extraction.</li>
+      <li><code>number</code> <strong>endIdx</strong> The zero-based index before which to end extraction. The character at this index will not be included.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: Just
+hbs.compile(&quot;{{slice str 0 4}}&quot;)({&quot;str&quot;:&quot;Just Wow&quot;});
+
+// Output: Wow
+hbs.compile(&quot;{{slice str 5}}&quot;)({&quot;str&quot;:&quot;Just Wow&quot;});
+
+// Output:  Wow
+hbs.compile(&quot;{{slice str -4}}&quot;)({&quot;str&quot;:&quot;Just Wow&quot;});</code></pre>
+    <!--end::slice-->
+
+    <!--begin::nltobr-->
+    <h2 id="string-helper-nltobr" class="text-primary">{{nltobr}}</h2>
+    <p>Replace \n with &lt;br&gt; tags.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>string</code> <strong>val</strong> Target string.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: It&#039;s&lt;br&gt;just&lt;br&gt;now
+hbs.compile(&quot;{{{nltobr str}}}&quot;)({&quot;str&quot;:&quot;It&#039;s\njust\nnow&quot;});</code></pre>
+    <!--end::nltobr-->
+
+    <!--begin::sprintf-->
+    <h2 id="string-helper-sprintf" class="text-primary">{{sprintf}}</h2>
+    <p>
+      Returns a string produced according to the formatting string format.<br>
+      It uses sprintf-js internally.<br>
+      Check <a href="https://github.com/alexei/sprintf.js" target="_blank">https://github.com/alexei/sprintf.js</a> for more information.
+    </p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>string</code> <strong>format</strong> Format string.</li>
+      <li><code>...any</code> <strong>args</strong> Any number of parameters/values.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Argument swapping:
+// Output: Hello Dolly!
+hbs.compile(&quot;{{sprintf &#039;%s %s!&#039; str1 str2}}&quot;)({&quot;str1&quot;:&quot;Hello&quot;,&quot;str2&quot;:&quot;Dolly&quot;});
+
+// Output: foo bar 55 baz 20
+hbs.compile(&quot;{{sprintf &#039;%s %s %d %s %d&#039; &#039;foo&#039; &#039;bar&#039; 55 &#039;baz&#039; &#039;20&#039;}}&quot;)();
+
+// Named arguments:
+// Output: Hello Dolly
+hbs.compile(&quot;{{sprintf &#039;Hello %(name)s&#039; user}}&quot;)({&quot;user&quot;:{&quot;name&quot;:&quot;Dolly&quot;}});
+
+// Output: Hello Dolly
+hbs.compile(&quot;{{sprintf &#039;Hello %(name)s&#039; name=str}}&quot;)({&quot;str&quot;:&quot;Dolly&quot;});</code></pre>
+    <!--end::sprintf-->
+
+    <!--begin::lowercase-->
+    <h2 id="string-helper-lowercase" class="text-primary">{{lowercase}}</h2>
+    <p>Changes the string to lowercase.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>string</code> <strong>val</strong> Target string.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: just wow
+hbs.compile(&quot;{{lowercase str}}&quot;)({&quot;str&quot;:&quot;JUST WOW&quot;});</code></pre>
+    <!--end::lowercase-->
+
+    <!--begin::uppercase-->
+    <h2 id="string-helper-uppercase" class="text-primary">{{uppercase}}</h2>
+    <p>Changes the string to uppercase.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>string</code> <strong>val</strong> Target string.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: JUST WOW
+hbs.compile(&quot;{{uppercase str}}&quot;)({&quot;str&quot;:&quot;just wow&quot;});</code></pre>
+    <!--end::uppercase-->
+
+    <!--begin::concat-->
+    <h2 id="string-helper-concat" class="text-primary">{{concat}}</h2>
+    <p>Concat two or more strings.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>...string</code> <strong>args</strong> Any number of string arguments.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: Hello world!
+hbs.compile(&quot;{{concat &#039;Hello&#039; &#039; world&#039; &#039;!&#039;}}&quot;)();</code></pre>
+    <!--end::concat-->
+
+    <!--begin::join-->
+    <h2 id="string-helper-join" class="text-primary">{{join}}</h2>
+    <p>Join the elements of an array using a delimeter.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>string[]</code> <strong>coll</strong> An array of elements to be joined.</li>
+      <li><code>string</code> <strong>delim</strong> A delimiter that joins array elements.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: Hands &amp; legs &amp; feet
+hbs.compile(&quot;{{{join coll &#039; &amp; &#039;}}}&quot;)({&quot;coll&quot;:[&quot;Hands&quot;,&quot;legs&quot;,&quot;feet&quot;]});</code></pre>
+    <!--end::join-->
+    <!--end::String helper-->
+  </main>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+<script src="scripts/docs.js"></script>
+</body>
+</html>

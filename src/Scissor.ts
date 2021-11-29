@@ -1,15 +1,22 @@
-import { Graphics } from 'js-shared';
+import {Graphics} from 'js-shared';
 import Output from '~/Output';
+import {waitForLoad} from '~/utils';
+// import {isUrl, isDataUrl, waitForLoad} from '~/utils';
 
 export default class {
-
-  private input: HTMLImageElement|HTMLCanvasElement;
+  /**
+   * @type {HTMLImageElement|HTMLCanvasElement|string} Image data of the conversion source.
+   */
+  private target: HTMLImageElement|HTMLCanvasElement|string;
 
   /**
-   * @param {HTMLImageElement|HTMLCanvasElement} input
+   * @param {HTMLImageElement|HTMLCanvasElement|string} target HTMLImageElement, HTMLCanvasElement, image URL, image in DataURL format.
    */
-  constructor(input: HTMLImageElement|HTMLCanvasElement) {
-    this.input = input;
+  constructor(target: HTMLImageElement|HTMLCanvasElement|string) {
+    // // If the image is a string, it returns an error if it is not in URL or DataURL format.
+    // if (typeof target === 'string' && (!isUrl(target) && !isDataUrl(target)))
+    //   throw new TypeError('The parameters must be HTMLImageElement, HTMLCanvasElement, URL string, DataURL string');
+    this.target = target;
   }
 
   /**
@@ -17,61 +24,82 @@ export default class {
    * 
    * @param {number|null|undefined} width
    * @param {number|null|undefined} height
-   * @param {{fit:'fill'|'cover'|'contain',background:string,format:'image/webp'|'image/png'|'image/jpeg'}} option
-   * @param {Output}
+   * @param {{fit:'fill'|'cover'|'contain',background:string,format:'image/webp'|'image/png'|'image/jpeg'}} opts
+   * @param {Promise<Output>}
    */
-  public resize(width: number|null, height?: number|null, option?: { fit?: 'fill'|'cover'|'contain', background?: string, format?: 'image/webp'|'image/png'|'image/jpeg' }): Output {
+  public async resize(
+    width: number|null,
+    height?: number|null,
+    opts?: {
+      fit?: 'fill'|'cover'|'contain',
+      background?: string,
+      format?: 'image/webp'|'image/png'|'image/jpeg'
+    }
+  ): Promise<Output> {
+    // Width or height required.
+    if (!width && !height)
+      throw new Error('Width or height required');
 
-    // Width or height required
-    if (!width && !height) throw new Error('Width or height required');
-
-    // Initialize options
-    option = Object.assign({
+    // Initialize options.
+    opts = Object.assign({
       fit: 'fill',
       background: '#000',
       format: 'image/png'
-    }, option||{});
+    }, opts||{});
+
+    // If the image is a URL string, convert the URL to an Img element.
+    let target = this.target;
+    if (typeof target === 'string') {
+    // if (typeof target === 'string' && (isUrl(target) || isDataUrl(target))) {
+      const img = new Image();
+      img.src = target as string;
+      await waitForLoad(img);
+      target = img;
+    } else if (target instanceof HTMLImageElement)
+      await waitForLoad(target);
 
     // Raw image dimensions
-    const { width: rawWidth, height: rawHeight } = Graphics.getMediaDimensions(this.input);
-    const rawRatio = rawHeight / rawWidth;
+    const dim = Graphics.getMediaDimensions(target);
+    const sr = dim.height / dim.width;
 
-    // Calculate resize value if no resize value is set
-    if (!width) width = rawWidth * height! / rawHeight;
-    if (!height) height = rawHeight * width / rawWidth;
-    const ratio = height / width;
+    // Calculate resize value if no resize value is set.
+    if (!width)
+      width = dim.width * height! / dim.height;
+    if (!height)
+      height = dim.height * width / dim.width;
+    const dr = height / width;
 
-    // Canvas drawing image dimensions
-    let x = 0;
-    let y = 0;
-    let swidth = width;
-    let sheight = height;
-    if (option.fit === 'contain') {
-      if (rawRatio < ratio) {
-        sheight = width * rawRatio;
-        y = (height - sheight) / 2;
-      } else if (rawRatio > ratio) {
-        swidth = width * ratio / rawRatio;
-        x = (width - swidth) / 2;
+    // Canvas drawing image dimensions.
+    let sx = 0;
+    let sy = 0;
+    let sw = width;
+    let sh = height;
+    if (opts.fit === 'contain') {
+      if (sr < dr) {
+        sh = width * sr;
+        sy = (height - sh) / 2;
+      } else if (sr > dr) {
+        sw = width * dr / sr;
+        sx = (width - sw) / 2;
       }
-    } else if (option.fit === 'cover') {
-      if (rawRatio > ratio) {
-        sheight = width * rawRatio;
-        y = (height - sheight) / 2;
-      } else if (rawRatio < ratio) {
-        swidth = width * ratio / rawRatio;
-        x = (width - swidth) / 2;
+    } else if (opts.fit === 'cover') {
+      if (sr > dr) {
+        sh = width * sr;
+        sy = (height - sh) / 2;
+      } else if (sr < dr) {
+        sw = width * dr / sr;
+        sx = (width - sw) / 2;
       }
     }
-    const canvas = document.createElement('canvas');
-    canvas.setAttribute('width', width.toString());
-    canvas.setAttribute('height', height.toString());
-    const ctx = canvas.getContext('2d')!;
-    if (option.background) {
-      ctx.fillStyle = option.background;
+    const cvs = document.createElement('canvas');
+    cvs.setAttribute('width', width.toString());
+    cvs.setAttribute('height', height.toString());
+    const ctx = cvs.getContext('2d')!;
+    if (opts.background) {
+      ctx.fillStyle = opts.background;
       ctx.fillRect(0, 0, width, height);
     }
-    ctx.drawImage(this.input, x, y, swidth, sheight);
-    return new Output(canvas, option.format!);
+    ctx.drawImage(target as HTMLImageElement|HTMLCanvasElement, sx, sy, sw, sh);
+    return new Output(cvs, opts.format!);
   }
 }

@@ -1,8 +1,8 @@
 import Scissor from '~/Scissor';
 /**
- * Return Scissor instance
+ * Return Scissor instance.
  *
- * @param {HTMLImageElement|HTMLCanvasElement} input
+ * @param {HTMLImageElement|HTMLCanvasElement|string} target Image data of the conversion source.
  * @return {Scissor}
  */
-export default function (input: HTMLImageElement | HTMLCanvasElement): Scissor;
+export default function (target: HTMLImageElement | HTMLCanvasElement | string): Scissor;

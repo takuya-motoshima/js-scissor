@@ -1,0 +1,20 @@
+{
+  "name": "examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./build.js"
+  },
+  "keywords": [],
+  "author": "Takuya Motoshima <developer.takuyamotoshima@gmail.com> (https://twitter.com/TakuyaMotoshima)",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.14.0",
+    "glob": "^7.2.0"
+  },
+  "dependencies": {
+    "highlight.js": "^11.3.1",
+    "js-scissor": "^1.0.0"
+  }
+}

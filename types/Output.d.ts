@@ -1,25 +1,34 @@
+/**
+ * Convert parameter canvas elements to base64, image elements, blobs.
+ */
 export default class {
-    private canvas;
+    /**
+     * @type {HTMLCanvasElement} Source canvas image.
+     */
+    private cvs;
+    /**
+     * @type {'image/webp'|'image/png'|'image/jpeg'} MIME type of the source canvas image.
+     */
     private format;
     /**
-     * @param {HTMLCanvasElement} canvas
-     * @param {'image/webp'|'image/png'|'image/jpeg'} format
+     * @param {HTMLCanvasElement} cvs Source canvas image.
+     * @param {'image/webp'|'image/png'|'image/jpeg'} format MIME type of the source canvas image.
      */
-    constructor(canvas: HTMLCanvasElement, format: 'image/webp' | 'image/png' | 'image/jpeg');
+    constructor(cvs: HTMLCanvasElement, format: 'image/webp' | 'image/png' | 'image/jpeg');
     /**
-     * Return Base64
+     * Return Base64.
      *
-     * @return {HTMLImageElement}
+     * @return {string}
      */
     toBase64(): string;
     /**
-     * Return image element
+     * Return image element.
      *
      * @return {HTMLImageElement}
      */
     toImage(): HTMLImageElement;
     /**
-     * Return Blob
+     * Return Blob.
      *
      * @return {Blob}
      */
