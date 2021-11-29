@@ -52,10 +52,7 @@
 
 This is a simple example showing how to use [esbuild](https://esbuild.github.io/) to bundle up an app using js-scissor.  
 This will browserify "src/app.js" and create a distribution file in "dist/app.js".
-Load index.html in a browser and open up the console to see sample output.  
-
-Running this example will bring up a page similar to the following:  
-<img src="screencap.png" width="500">
+Load index.html in a browser and open up the console to see sample output. 
 
 ## Author
 

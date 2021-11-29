@@ -118,22 +118,24 @@
     <p>Install with <a href="https://www.npmjs.com/" rel="nofollow" target="_blank">npm</a>:</p>
     <pre><code class="bash">npm install --save js-scissor</code></pre>
     <!--end::Installation-->
-
+    
     <!--begin::Browser usage-->
     <h1 id="browser-usage">Browser usage</h1>
-    <p>
-      See how to use <a href="https://github.com/takuya-motoshima/js-scissor/tree/master/examples" target="_blank">js-scissor in the browser</a>.<br>
-      Running this example will bring up a page similar to the following:
-    </p>
-    <img src="https://raw.githubusercontent.com/takuya-motoshima/js-scissor/master/examples/screencap.png" class="img-fluid" style="width: 400px;">
+    <p>See how to use <a href="https://github.com/takuya-motoshima/js-scissor/tree/master/examples" target="_blank">js-scissor in the browser</a>.</p>
     <!--end::Browser usage-->
 
     <!--begin::Usage-->
     <h1 id="usage">Usage</h1>
     <p>Resize by specifying only the width.</p>
-    <pre><code class="html"></code></pre>
+    <img src="https://raw.githubusercontent.com/takuya-motoshima/js-scissor/master/examples/screencap.png" class="img-fluid" style="width: 400px;">
 
-    <pre><code class="js"></code></pre>
+    <pre><code class="js">import scissor from &#039;js-scissor&#039;;
+
+// HTML: &lt;img id=&quot;src2&quot; src=&quot;img/sample2.png&quot;&gt;
+//       &lt;img id=&quot;dest2&quot;&gt;
+let src = document.querySelector(&#039;#src2&#039;);
+let dest = document.querySelector(&#039;#dest2&#039;);
+dest.src = (await scissor(src).resize(null, 100)).toBase64();</code></pre>
     <!--end::Usage-->
 
     <!--begin::Comparison helper-->
