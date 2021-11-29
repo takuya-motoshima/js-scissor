@@ -16,86 +16,84 @@
 </head>
 <body>
   <div class="container-xxl my-4">
-
-    <h1>Example of using js-scissor</h1>
-
+    <!-- <h1>Example of using js-scissor</h1> -->
     <h4>Resize by specifying only the width.</h4>
     <div class="d-flex flex-row align-items-center mb-3">
-      <img id="srcImg1" src="img/sample1.jpg" class="m-2">
+      <img id="src1" src="img/sample1.jpg" class="m-2">
       <img src="img/allow-right.svg">
-      <img id="destImg1" class="m-2">
+      <img id="dest1" class="m-2">
     </div>
-    HTML:<pre><code class="language-html">&lt;img id=&quot;srcImg1&quot; src=&quot;img/sample1.jpg&quot;&gt;
-&lt;img id=&quot;destImg1&quot;&gt;</code></pre>
-    JS:<pre><code class="language-javascript">let srcImg = document.querySelector(&#039;#srcImg1&#039;);
-let destImg = document.querySelector(&#039;#destImg1&#039;);
-destImg.src = (await scissor(srcImg).resize(300)).toBase64();</code></pre>
+    <pre><code class="language-javascript">// HTML: &lt;img id=&quot;src1&quot; src=&quot;img/sample1.jpg&quot;&gt;
+//       &lt;img id=&quot;dest1&quot;&gt;
+let src = document.querySelector(&#039;#src1&#039;);
+let dest = document.querySelector(&#039;#dest1&#039;);
+dest.src = (await scissor(src).resize(300)).toBase64();</code></pre>
 
     <h4 class="mt-3">Resize by specifying only the height.</h4>
     <div class="d-flex flex-row align-items-center mb-3">
-      <img id="srcImg2" src="img/sample2.png" class="m-2">
+      <img id="src2" src="img/sample2.png" class="m-2">
       <img src="img/allow-right.svg">
-      <img id="destImg2" class="m-2">
+      <img id="dest2" class="m-2">
     </div>
-    HTML:<pre><code class="language-html">&lt;img id=&quot;srcImg2&quot; src=&quot;img/sample2.png&quot;&gt;
-&lt;img id=&quot;destImg2&quot;&gt;</code></pre>
-    JS:<pre><code class="language-javascript">let srcImg = document.querySelector(&#039;#srcImg2&#039;);
-let destImg = document.querySelector(&#039;#destImg2&#039;);
-destImg.src = (await scissor(srcImg).resize(null, 100)).toBase64();</code></pre>
+    <pre><code class="language-javascript">// HTML: &lt;img id=&quot;src2&quot; src=&quot;img/sample2.png&quot;&gt;
+//       &lt;img id=&quot;dest2&quot;&gt;
+let src = document.querySelector(&#039;#src2&#039;);
+let dest = document.querySelector(&#039;#dest2&#039;);
+dest.src = (await scissor(src).resize(null, 100)).toBase64();</code></pre>
 
     <h4 class="mt-3">Resize by specifying width and height (cover)</h4>
     <p>Resize to a width of 300px and a height of 200px so that the center is cut out while maintaining the aspect ratio.</p>
     <div class="d-flex flex-row align-items-center mb-3">
-      <img id="srcImg3" src="img/sample1.jpg" class="m-2">
+      <img id="src3" src="img/sample1.jpg" class="m-2">
       <img src="img/allow-right.svg">
-      <img id="destImg3" class="m-2">
+      <img id="dest3" class="m-2">
     </div>
-    HTML:<pre><code class="language-html">&lt;img id=&quot;srcImg3&quot; src=&quot;img/sample1.jpg&quot;&gt;
-&lt;img id=&quot;destImg3&quot;&gt;</code></pre>
-    JS:<pre><code class="language-javascript">let srcImg = document.querySelector(&#039;#srcImg3&#039;);
-let destImg = document.querySelector(&#039;#destImg3&#039;);
-destImg.src = (await scissor(srcImg).resize(100, 150, {fit: &#039;cover&#039;})).toBase64();
+    <pre><code class="language-javascript">// HTML: &lt;img id=&quot;src3&quot; src=&quot;img/sample1.jpg&quot;&gt;
+//       &lt;img id=&quot;dest3&quot;&gt;
+let src = document.querySelector(&#039;#src3&#039;);
+let dest = document.querySelector(&#039;#dest3&#039;);
+dest.src = (await scissor(src).resize(100, 150, {fit: &#039;cover&#039;})).toBase64();
 </code></pre>
 
     <h4 class="mt-3">Resize by specifying width and height (contain)</h4>
     <p>Resize it to a width of 512px and a height of 200px to fit the specified size while maintaining the aspect ratio.<br>Blank areas are filled with the background color (default black).</p>
     <div class="d-flex flex-row align-items-center mb-3">
-      <img id="srcImg4" src="img/sample1.jpg" class="m-2">
+      <img id="src4" src="img/sample1.jpg" class="m-2">
       <img src="img/allow-right.svg">
-      <img id="destImg4" class="m-2">
+      <img id="dest4" class="m-2">
     </div>
-    HTML:<pre><code class="language-html">&lt;img id=&quot;srcImg4&quot; src=&quot;img/sample1.jpg&quot;&gt;
-&lt;img id=&quot;destImg4&quot;&gt;</code></pre>
-    JS:<pre><code class="language-javascript">let srcImg = document.querySelector(&#039;#srcImg4&#039;);
-let destImg = document.querySelector(&#039;#destImg4&#039;);
-destImg.src = (await scissor(srcImg).resize(100, 150, {fit: &#039;cover&#039;})).toBase64();
+    <pre><code class="language-javascript">// HTML: &lt;img id=&quot;src4&quot; src=&quot;img/sample1.jpg&quot;&gt;
+//       &lt;img id=&quot;dest4&quot;&gt;
+let src = document.querySelector(&#039;#src4&#039;);
+let dest = document.querySelector(&#039;#dest4&#039;);
+dest.src = (await scissor(src).resize(100, 150, {fit: &#039;cover&#039;})).toBase64();
 </code></pre>
 
     <h4 class="mt-3">Resize by specifying width and height (fill)</h4>
     <p>Resize to the specified size without keeping the aspect ratio.</p>
     <div class="d-flex flex-row align-items-center mb-3">
-      <img id="srcImg5" src="img/sample1.jpg" class="m-2">
+      <img id="src5" src="img/sample1.jpg" class="m-2">
       <img src="img/allow-right.svg">
-      <img id="destImg5" class="m-2">
+      <img id="dest5" class="m-2">
     </div>
-    HTML:<pre><code class="language-html">&lt;img id=&quot;srcImg5&quot; src=&quot;img/sample1.jpg&quot;&gt;
-&lt;img id=&quot;destImg5&quot;&gt;</code></pre>
-    JS:<pre><code class="language-javascript">let srcImg = document.querySelector(&#039;#srcImg5&#039;);
-let destImg = document.querySelector(&#039;#destImg5&#039;);
-destImg.src = (await scissor(srcImg).resize(100, 150)).toBase64();
+    <pre><code class="language-javascript">// HTML: &lt;img id=&quot;src5&quot; src=&quot;img/sample1.jpg&quot;&gt;
+//       &lt;img id=&quot;dest5&quot;&gt;
+let src = document.querySelector(&#039;#src5&#039;);
+let dest = document.querySelector(&#039;#dest5&#039;);
+dest.src = (await scissor(src).resize(100, 150)).toBase64();
 </code></pre>
 
     <h4 class="mt-3">Resize the image read from the URL.</h4>
     <div class="d-flex flex-row align-items-center mb-3">
       <img src="img/sample2.png" class="m-2">
       <img src="img/allow-right.svg">
-      <img id="destImg6" class="m-2">
+      <img id="dest6" class="m-2">
     </div>
-    HTML:<pre><code class="language-html">&lt;img id=&quot;srcImg5&quot; src=&quot;img/sample1.jpg&quot;&gt;
-&lt;img id=&quot;destImg6&quot;&gt;</code></pre>
-    JS:<pre><code class="language-javascript">let srcImg = document.querySelector(&#039;#srcImg5&#039;);
-let destImg = document.querySelector(&#039;#destImg6&#039;);
-destImg.src = (await scissor(srcImg).resize(100, 150)).toBase64();
+    <pre><code class="language-javascript">// HTML: &lt;img id=&quot;src5&quot; src=&quot;img/sample1.jpg&quot;&gt;
+//       &lt;img id=&quot;dest6&quot;&gt;
+let src = document.querySelector(&#039;#src5&#039;);
+let dest = document.querySelector(&#039;#dest6&#039;);
+dest.src = (await scissor(src).resize(100, 150)).toBase64();
 </code></pre>
 </div>
 

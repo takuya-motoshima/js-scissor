@@ -49308,23 +49308,23 @@
   // src/app.js
   (async () => {
     es_default.highlightAll();
-    let srcImg = document.querySelector("#srcImg1");
-    let destImg = document.querySelector("#destImg1");
-    destImg.src = (await (0, import_js_scissor.default)(srcImg).resize(300)).toBase64();
-    srcImg = document.querySelector("#srcImg2");
-    destImg = document.querySelector("#destImg2");
-    destImg.src = (await (0, import_js_scissor.default)(srcImg).resize(null, 100)).toBase64();
-    srcImg = document.querySelector("#srcImg3");
-    destImg = document.querySelector("#destImg3");
-    destImg.src = (await (0, import_js_scissor.default)(srcImg).resize(100, 150, { fit: "cover" })).toBase64();
-    srcImg = document.querySelector("#srcImg4");
-    destImg = document.querySelector("#destImg4");
-    destImg.src = (await (0, import_js_scissor.default)(srcImg).resize(100, 150, { fit: "contain" })).toBase64();
-    srcImg = document.querySelector("#srcImg5");
-    destImg = document.querySelector("#destImg5");
-    destImg.src = (await (0, import_js_scissor.default)(srcImg).resize(100, 150)).toBase64();
-    destImg = document.querySelector("#destImg6");
-    destImg.src = (await (0, import_js_scissor.default)("img/sample2.png").resize(100, 200, { fit: "cover" })).toBase64();
+    let src = document.querySelector("#src1");
+    let dest = document.querySelector("#dest1");
+    dest.src = (await (0, import_js_scissor.default)(src).resize(300)).toBase64();
+    src = document.querySelector("#src2");
+    dest = document.querySelector("#dest2");
+    dest.src = (await (0, import_js_scissor.default)(src).resize(null, 100)).toBase64();
+    src = document.querySelector("#src3");
+    dest = document.querySelector("#dest3");
+    dest.src = (await (0, import_js_scissor.default)(src).resize(100, 150, { fit: "cover" })).toBase64();
+    src = document.querySelector("#src4");
+    dest = document.querySelector("#dest4");
+    dest.src = (await (0, import_js_scissor.default)(src).resize(100, 150, { fit: "contain" })).toBase64();
+    src = document.querySelector("#src5");
+    dest = document.querySelector("#dest5");
+    dest.src = (await (0, import_js_scissor.default)(src).resize(100, 150)).toBase64();
+    dest = document.querySelector("#dest6");
+    dest.src = (await (0, import_js_scissor.default)("img/sample2.png").resize(100, 200, { fit: "cover" })).toBase64();
   })();
 })();
 /**!

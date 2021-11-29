@@ -7,31 +7,31 @@ import hljs from 'highlight.js';
   hljs.highlightAll();
 
   // Resize by specifying only the width.
-  let srcImg = document.querySelector('#srcImg1');
-  let destImg = document.querySelector('#destImg1');
-  destImg.src = (await scissor(srcImg).resize(300)).toBase64();
+  let src = document.querySelector('#src1');
+  let dest = document.querySelector('#dest1');
+  dest.src = (await scissor(src).resize(300)).toBase64();
 
   // Resize by specifying only the height.
-  srcImg = document.querySelector('#srcImg2');
-  destImg = document.querySelector('#destImg2');
-  destImg.src = (await scissor(srcImg).resize(null, 100)).toBase64();
+  src = document.querySelector('#src2');
+  dest = document.querySelector('#dest2');
+  dest.src = (await scissor(src).resize(null, 100)).toBase64();
 
   // Resize by specifying width and height (cover)
-  srcImg = document.querySelector('#srcImg3');
-  destImg = document.querySelector('#destImg3');
-  destImg.src = (await scissor(srcImg).resize(100, 150, {fit: 'cover'})).toBase64();
+  src = document.querySelector('#src3');
+  dest = document.querySelector('#dest3');
+  dest.src = (await scissor(src).resize(100, 150, {fit: 'cover'})).toBase64();
 
   // Resize by specifying width and height (contain)
-  srcImg = document.querySelector('#srcImg4');
-  destImg = document.querySelector('#destImg4');
-  destImg.src = (await scissor(srcImg).resize(100, 150, {fit: 'contain'})).toBase64();
+  src = document.querySelector('#src4');
+  dest = document.querySelector('#dest4');
+  dest.src = (await scissor(src).resize(100, 150, {fit: 'contain'})).toBase64();
 
   // Resize by specifying width and height (fill)
-  srcImg = document.querySelector('#srcImg5');
-  destImg = document.querySelector('#destImg5');
-  destImg.src = (await scissor(srcImg).resize(100, 150)).toBase64();
+  src = document.querySelector('#src5');
+  dest = document.querySelector('#dest5');
+  dest.src = (await scissor(src).resize(100, 150)).toBase64();
 
   // Resize the image read from the URL.
-  destImg = document.querySelector('#destImg6');
-  destImg.src = (await scissor('img/sample2.png').resize(100, 200, {fit: 'cover'})).toBase64();
+  dest = document.querySelector('#dest6');
+  dest.src = (await scissor('img/sample2.png').resize(100, 200, {fit: 'cover'})).toBase64();
 })();
