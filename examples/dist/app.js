@@ -3140,10 +3140,8 @@
         }
         function h(t2) {
           return new Promise((e2) => {
-            if (t2.complete)
-              return console.log(`${t2.src} is already loaded`), void e2();
-            t2.addEventListener("load", () => {
-              console.log(`Loaded ${t2.src}`), e2();
+            t2.complete ? e2() : t2.addEventListener("load", () => {
+              e2();
             });
           });
         }
@@ -49310,21 +49308,21 @@
     es_default.highlightAll();
     let src = document.querySelector("#src1");
     let dest = document.querySelector("#dest1");
-    dest.src = (await (0, import_js_scissor.default)(src).resize(300)).toBase64();
+    dest.src = (await new import_js_scissor.default(src).resize(100)).toBase64();
     src = document.querySelector("#src2");
     dest = document.querySelector("#dest2");
-    dest.src = (await (0, import_js_scissor.default)(src).resize(null, 100)).toBase64();
+    dest.src = (await new import_js_scissor.default(src).resize(null, 100)).toBase64();
     src = document.querySelector("#src3");
     dest = document.querySelector("#dest3");
-    dest.src = (await (0, import_js_scissor.default)(src).resize(100, 150, { fit: "cover" })).toBase64();
+    dest.src = (await new import_js_scissor.default(src).resize(100, 225, { fit: "cover" })).toBase64();
     src = document.querySelector("#src4");
     dest = document.querySelector("#dest4");
-    dest.src = (await (0, import_js_scissor.default)(src).resize(100, 150, { fit: "contain" })).toBase64();
+    dest.src = (await new import_js_scissor.default(src).resize(100, 225, { fit: "contain" })).toBase64();
     src = document.querySelector("#src5");
     dest = document.querySelector("#dest5");
-    dest.src = (await (0, import_js_scissor.default)(src).resize(100, 150)).toBase64();
+    dest.src = (await new import_js_scissor.default(src).resize(100, 225)).toBase64();
     dest = document.querySelector("#dest6");
-    dest.src = (await (0, import_js_scissor.default)("img/sample2.png").resize(100, 200, { fit: "cover" })).toBase64();
+    dest.src = (await new import_js_scissor.default("img/sample2.png").resize(100, 225, { fit: "cover" })).toBase64();
   })();
 })();
 /**!

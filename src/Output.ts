@@ -13,8 +13,8 @@ export default class {
   private format: 'image/webp'|'image/png'|'image/jpeg';
 
   /**
-   * @param {HTMLCanvasElement} cvs Source canvas image.
-   * @param {'image/webp'|'image/png'|'image/jpeg'} format MIME type of the source canvas image.
+   * @param {HTMLCanvasElement} cvs Converted image canvas element.
+   * @param {'image/webp'|'image/png'|'image/jpeg'} format Image format after resizing.
    */
   constructor(cvs: HTMLCanvasElement, format: 'image/webp'|'image/png'|'image/jpeg') {
     this.cvs = cvs;
@@ -22,18 +22,18 @@ export default class {
   }
 
   /**
-   * Return Base64.
+   * Returns the resized image in base64 format.
    * 
-   * @return {string}
+   * @return {string} Base64 data of the image after resizing, e.g. data:image/png;base64, iVB...
    */
   public toBase64(): string {
     return this.cvs.toDataURL(this.format, 1.);
   }
 
   /**
-   * Return image element.
+   * Returns the resized image as an image element.
    * 
-   * @return {HTMLImageElement}
+   * @return {HTMLImageElement} The image element of the resized image.
    */
   public toImage(): HTMLImageElement {
     const img = new Image();

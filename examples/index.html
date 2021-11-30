@@ -9,8 +9,8 @@
   <style>
     [src*='/allow-right.svg'] {
       display: inline-block;
-      width: 32px;
-      height: 32px;
+      width: 24px;
+      height: 24px;
     }
   </style>
 </head>
@@ -23,11 +23,13 @@
       <img src="img/allow-right.svg">
       <img id="dest1" class="m-2">
     </div>
-    <pre><code class="language-javascript">// HTML: &lt;img id=&quot;src1&quot; src=&quot;img/sample1.jpg&quot;&gt;
+    <pre><code class="language-javascript">import Scissor from &#039;js-scissor&#039;;
+
+// HTML: &lt;img id=&quot;src1&quot; src=&quot;img/sample1.jpg&quot;&gt;
 //       &lt;img id=&quot;dest1&quot;&gt;
 let src = document.querySelector(&#039;#src1&#039;);
 let dest = document.querySelector(&#039;#dest1&#039;);
-dest.src = (await scissor(src).resize(300)).toBase64();</code></pre>
+dest.src = (await new Scissor(src).resize(100)).toBase64();</code></pre>
 
     <h4 class="mt-3">Resize height.</h4>
     <div class="d-flex flex-row align-items-center mb-3">
@@ -35,39 +37,43 @@ dest.src = (await scissor(src).resize(300)).toBase64();</code></pre>
       <img src="img/allow-right.svg">
       <img id="dest2" class="m-2">
     </div>
-    <pre><code class="language-javascript">// HTML: &lt;img id=&quot;src2&quot; src=&quot;img/sample2.png&quot;&gt;
+    <pre><code class="language-javascript">import Scissor from &#039;js-scissor&#039;;
+
+// HTML: &lt;img id=&quot;src2&quot; src=&quot;img/sample2.png&quot;&gt;
 //       &lt;img id=&quot;dest2&quot;&gt;
 let src = document.querySelector(&#039;#src2&#039;);
 let dest = document.querySelector(&#039;#dest2&#039;);
-dest.src = (await scissor(src).resize(null, 100)).toBase64();</code></pre>
+dest.src = (await new Scissor(src).resize(null, 100)).toBase64();</code></pre>
 
     <h4 class="mt-3">Resize by specifying width and height (cover)</h4>
-    <p>Resize to a width of 300px and a height of 200px so that the center is cut out while maintaining the aspect ratio.</p>
+    <p>Resize so that the center is cut off while maintaining the aspect ratio.</p>
     <div class="d-flex flex-row align-items-center mb-3">
       <img id="src3" src="img/sample1.jpg" class="m-2">
       <img src="img/allow-right.svg">
       <img id="dest3" class="m-2">
     </div>
-    <pre><code class="language-javascript">// HTML: &lt;img id=&quot;src3&quot; src=&quot;img/sample1.jpg&quot;&gt;
+    <pre><code class="language-javascript">import Scissor from &#039;js-scissor&#039;;
+
+// HTML: &lt;img id=&quot;src3&quot; src=&quot;img/sample1.jpg&quot;&gt;
 //       &lt;img id=&quot;dest3&quot;&gt;
 let src = document.querySelector(&#039;#src3&#039;);
 let dest = document.querySelector(&#039;#dest3&#039;);
-dest.src = (await scissor(src).resize(100, 150, {fit: &#039;cover&#039;})).toBase64();
-</code></pre>
+dest.src = (await new Scissor(src).resize(100, 225, {fit: &#039;cover&#039;})).toBase64();</code></pre>
 
     <h4 class="mt-3">Resize by specifying width and height (contain)</h4>
-    <p>Resize it to a width of 512px and a height of 200px to fit the specified size while maintaining the aspect ratio.<br>Blank areas are filled with the background color (default black).</p>
+    <p>Resize to fit the specified size while maintaining the aspect ratio.Blank areas are filled with the background color (default is black).</p>
     <div class="d-flex flex-row align-items-center mb-3">
       <img id="src4" src="img/sample1.jpg" class="m-2">
       <img src="img/allow-right.svg">
       <img id="dest4" class="m-2">
     </div>
-    <pre><code class="language-javascript">// HTML: &lt;img id=&quot;src4&quot; src=&quot;img/sample1.jpg&quot;&gt;
+    <pre><code class="language-javascript">import Scissor from &#039;js-scissor&#039;;
+
+// HTML: &lt;img id=&quot;src4&quot; src=&quot;img/sample1.jpg&quot;&gt;
 //       &lt;img id=&quot;dest4&quot;&gt;
 let src = document.querySelector(&#039;#src4&#039;);
 let dest = document.querySelector(&#039;#dest4&#039;);
-dest.src = (await scissor(src).resize(100, 150, {fit: &#039;cover&#039;})).toBase64();
-</code></pre>
+dest.src = (await new Scissor(src).resize(100, 225, {fit: &#039;contain&#039;})).toBase64();</code></pre>
 
     <h4 class="mt-3">Resize by specifying width and height (fill)</h4>
     <p>Resize to the specified size without keeping the aspect ratio.</p>
@@ -76,12 +82,13 @@ dest.src = (await scissor(src).resize(100, 150, {fit: &#039;cover&#039;})).toBas
       <img src="img/allow-right.svg">
       <img id="dest5" class="m-2">
     </div>
-    <pre><code class="language-javascript">// HTML: &lt;img id=&quot;src5&quot; src=&quot;img/sample1.jpg&quot;&gt;
+    <pre><code class="language-javascript">import Scissor from &#039;js-scissor&#039;;
+
+// HTML: &lt;img id=&quot;src5&quot; src=&quot;img/sample1.jpg&quot;&gt;
 //       &lt;img id=&quot;dest5&quot;&gt;
 let src = document.querySelector(&#039;#src5&#039;);
 let dest = document.querySelector(&#039;#dest5&#039;);
-dest.src = (await scissor(src).resize(100, 150)).toBase64();
-</code></pre>
+dest.src = (await new Scissor(src).resize(100, 225)).toBase64();</code></pre>
 
     <h4 class="mt-3">Resize the image read from the URL.</h4>
     <div class="d-flex flex-row align-items-center mb-3">
@@ -89,13 +96,14 @@ dest.src = (await scissor(src).resize(100, 150)).toBase64();
       <img src="img/allow-right.svg">
       <img id="dest6" class="m-2">
     </div>
-    <pre><code class="language-javascript">// HTML: &lt;img id=&quot;src5&quot; src=&quot;img/sample1.jpg&quot;&gt;
+    <pre><code class="language-javascript">import Scissor from &#039;js-scissor&#039;;
+
+// HTML: &lt;img src=&quot;img/sample2.png&quot;&gt;
 //       &lt;img id=&quot;dest6&quot;&gt;
-let src = document.querySelector(&#039;#src5&#039;);
 let dest = document.querySelector(&#039;#dest6&#039;);
-dest.src = (await scissor(src).resize(100, 150)).toBase64();
-</code></pre>
-</div>
+dest.src = (await new Scissor(&#039;img/sample2.png&#039;).resize(100, 225, {fit: &#039;cover&#039;})).toBase64();</code></pre>
+  
+  </div>
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
   <script src="dist/app.js"></script>

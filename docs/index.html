@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reference | js-scissor</title>
-  <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png"> -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/agate.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-  <link href="styles/docs.css" rel="stylesheet">
+  <link href="css/docs.css" rel="stylesheet">
 </head>
 <body data-bs-spy="scroll" data-bs-target="#sidenav" data-bs-offset="74">
 <header class="navbar navbar-expand-md navbar-light topnav fixed-top">
   <nav class="container-xxl justify-content-start" aria-label="Main navigation">
     <a class="navbar-brand p-0 me-2" href="./" aria-label="Bootstrap">
-      <img src="images/logo.svg" height="24">
+      <img src="img/logo.svg" height="24">
     </a>
     <ul class="navbar-nav flex-row ms-auto">
       <li class="nav-item col-auto">
@@ -47,61 +47,22 @@
       <nav class="nav nav-pills flex-column flex-nowrap mb-0 py-3 pt-md-1">
         <a class="nav-link" href="#introduction">Introduction</a>
         <a class="nav-link" href="#installation">Installation</a>
-        <a class="nav-link" href="#browser-usage">Browser usage</a>
         <a class="nav-link" href="#usage">Usage</a>
-        <a class="nav-link" href="#comparison-helper">Comparison helper</a>
         <nav class="nav nav-pills flex-column flex-nowrap fw-normal small">
-          <a class="nav-link" href="#comparison-helper-summary">Summary</a>
-          <a class="nav-link" href="#comparison-helper-opr">{{opr}}</a>
-          <a class="nav-link" href="#comparison-helper-eq">{{eq}}</a>
-          <a class="nav-link" href="#comparison-helper-eqw">{{eqw}}</a>
-          <a class="nav-link" href="#comparison-helper-neq">{{neq}}</a>
-          <a class="nav-link" href="#comparison-helper-neqw">{{neqw}}</a>
-          <a class="nav-link" href="#comparison-helper-lt">{{lt}}</a>
-          <a class="nav-link" href="#comparison-helper-gt">{{gt}}</a>
-          <a class="nav-link" href="#comparison-helper-lte">{{lte}}</a>
-          <a class="nav-link" href="#comparison-helper-gte">{{gte}}</a>
-          <a class="nav-link" href="#comparison-helper-ifx">{{ifx}}</a>
-          <a class="nav-link" href="#comparison-helper-not">{{not}}</a>
-          <a class="nav-link" href="#comparison-helper-empty">{{empty}}</a>
-          <a class="nav-link" href="#comparison-helper-count">{{count}}</a>
-          <a class="nav-link" href="#comparison-helper-and">{{and}}</a>
-          <a class="nav-link" href="#comparison-helper-or">{{or}}</a>
-          <a class="nav-link" href="#comparison-helper-coalesce">{{coalesce}}</a>
-          <a class="nav-link" href="#comparison-helper-includes">{{includes}}</a>
+          <a class="nav-link" href="#usage-resize-width">Resize width</a>
+          <a class="nav-link" href="#usage-resize-height">Resize height</a>
+          <a class="nav-link" href="#usage-resize-cover">Resize cover</a>
+          <a class="nav-link" href="#usage-resize-contain">Resize contain</a>
+          <a class="nav-link" href="#usage-resize-fill">Resize fill</a>
+          <a class="nav-link" href="#usage-resize-from-url">Resize from URL</a>
         </nav>
-        <a class="nav-link" href="#date-helper">Date helper</a>
+        <a class="nav-link" href="#class-scissor">Class Scissor</a>
         <nav class="nav nav-pills flex-column flex-nowrap fw-normal small">
-          <a class="nav-link" href="#date-helper-summary">Summary</a>
-          <a class="nav-link" href="#date-helper-format-date">{{formatDate}}</a>
+          <a class="nav-link" href="#class-scissor-methods">Methods</a>
         </nav>
-        <a class="nav-link" href="#html-helper">HTML helper</a>
+        <a class="nav-link" href="#class-output">Class Output</a>
         <nav class="nav nav-pills flex-column flex-nowrap fw-normal small">
-          <a class="nav-link" href="#html-helper-summary">Summary</a>
-          <a class="nav-link" href="#html-helper-class-if">{{classIf}}</a>
-          <a class="nav-link" href="#html-helper-selected-if">{{selectedIf}}</a>
-          <a class="nav-link" href="#html-helper-checked-if">{{checkedIf}}</a>
-          <a class="nav-link" href="#html-helper-options">{{options}}</a>
-        </nav>
-        <a class="nav-link" href="#math-helper">Math helper</a>
-        <nav class="nav nav-pills flex-column flex-nowrap fw-normal small">
-          <a class="nav-link" href="#math-helper-summary">Summary</a>
-          <a class="nav-link" href="#math-helper-add">{{add}}</a>
-          <a class="nav-link" href="#math-helper-sub">{{sub}}</a>
-          <a class="nav-link" href="#math-helper-ceil">{{ceil}}</a>
-          <a class="nav-link" href="#math-helper-floor">{{floor}}</a>
-          <a class="nav-link" href="#math-helper-abs">{{abs}}</a>
-        </nav>
-        <a class="nav-link" href="#string-helper">String helper</a>
-        <nav class="nav nav-pills flex-column flex-nowrap fw-normal small">
-          <a class="nav-link" href="#string-helper-summary">Summary</a>
-          <a class="nav-link" href="#string-helper-slice">{{slice}}</a>
-          <a class="nav-link" href="#string-helper-nltobr">{{nltobr}}</a>
-          <a class="nav-link" href="#string-helper-sprintf">{{sprintf}}</a>
-          <a class="nav-link" href="#string-helper-lowercase">{{lowercase}}</a>
-          <a class="nav-link" href="#string-helper-uppercase">{{uppercase}}</a>
-          <a class="nav-link" href="#string-helper-concat">{{concat}}</a>
-          <a class="nav-link" href="#string-helper-join">{{join}}</a>
+          <a class="nav-link" href="#class-output-methods">Methods</a>
         </nav>
       </nav>
     </nav>
@@ -119,889 +80,247 @@
     <pre><code class="bash">npm install --save js-scissor</code></pre>
     <!--end::Installation-->
     
-    <!--begin::Browser usage-->
-    <h1 id="browser-usage">Browser usage</h1>
-    <p>See how to use <a href="https://github.com/takuya-motoshima/js-scissor/tree/master/examples" target="_blank">js-scissor in the browser</a>.</p>
-    <!--end::Browser usage-->
-
     <!--begin::Usage-->
     <h1 id="usage">Usage</h1>
+    <p>See how to use <a href="https://github.com/takuya-motoshima/js-scissor/tree/master/examples" target="_blank">js-scissor in the browser</a>.</p>
+    <h2 id="usage-resize-width">Resize width.</h2>
+    <img src="img/Resize width.png" class="img-fluid mb-3">
+    <pre><code class="js">import Scissor from &#039;js-scissor&#039;;
 
-    <h2>Resize width.</h2>
-    <img src="https://raw.githubusercontent.com/takuya-motoshima/js-scissor/master/screencap/Resize width.png" class="img-fluid mb-3">
-    <pre><code class="js">import scissor from &#039;js-scissor&#039;;
+// HTML: &lt;img id=&quot;src1&quot; src=&quot;img/sample1.jpg&quot;&gt;
+//       &lt;img id=&quot;dest1&quot;&gt;
+let src = document.querySelector(&#039;#src1&#039;);
+let dest = document.querySelector(&#039;#dest1&#039;);
+dest.src = (await new Scissor(src).resize(100)).toBase64();</code></pre>
+
+    <h2 id="usage-resize-height">Resize height.</h2>
+    <img src="img/Resize height.png" class="img-fluid mb-3">
+    <pre><code class="js">import Scissor from &#039;js-scissor&#039;;
 
 // HTML: &lt;img id=&quot;src2&quot; src=&quot;img/sample2.png&quot;&gt;
 //       &lt;img id=&quot;dest2&quot;&gt;
 let src = document.querySelector(&#039;#src2&#039;);
 let dest = document.querySelector(&#039;#dest2&#039;);
-dest.src = (await scissor(src).resize(null, 100)).toBase64();</code></pre>
-
-    <h2>Resize height.</h2>
-    <img src="https://raw.githubusercontent.com/takuya-motoshima/js-scissor/master/screencap/Resize height.png" class="img-fluid mb-3">
-    <pre><code class="js">import scissor from &#039;js-scissor&#039;;
-
-// HTML: &lt;img id=&quot;src2&quot; src=&quot;img/sample2.png&quot;&gt;
-//       &lt;img id=&quot;dest2&quot;&gt;
-let src = document.querySelector(&#039;#src2&#039;);
-let dest = document.querySelector(&#039;#dest2&#039;);
-dest.src = (await scissor(src).resize(null, 100)).toBase64();</code></pre>
+dest.src = (await new Scissor(src).resize(null, 100)).toBase64();</code></pre>
     
-    <h2>Resize by specifying width and height (cover)</h2>
-    <p>Resize to a width of 300px and a height of 200px so that the center is cut out while maintaining the aspect ratio.</p>
-    <img src="https://raw.githubusercontent.com/takuya-motoshima/js-scissor/master/screencap/Resize Cover.png" class="img-fluid mb-3">
-    <pre><code class="js">import scissor from &#039;js-scissor&#039;;
+    <h2 id="usage-resize-cover">Resize by specifying width and height (cover)</h2>
+    <p>Resize so that the center is cut off while maintaining the aspect ratio.</p>
+    <img src="img/Resize Cover.png" class="img-fluid mb-3">
+    <pre><code class="js">import Scissor from &#039;js-scissor&#039;;
 
 // HTML: &lt;img id=&quot;src3&quot; src=&quot;img/sample1.jpg&quot;&gt;
 //       &lt;img id=&quot;dest3&quot;&gt;
 let src = document.querySelector(&#039;#src3&#039;);
 let dest = document.querySelector(&#039;#dest3&#039;);
-dest.src = (await scissor(src).resize(100, 150, {fit: &#039;cover&#039;})).toBase64();</code></pre>
+dest.src = (await new Scissor(src).resize(100, 225, {fit: &#039;cover&#039;})).toBase64();</code></pre>
 
-    <h2>Resize by specifying width and height (contain)</h2>
-    <p>
-      Resize it to a width of 512px and a height of 200px to fit the specified size while maintaining the aspect ratio.<br>
-      Blank areas are filled with the background color (default black).
-    </p>
-    <img src="https://raw.githubusercontent.com/takuya-motoshima/js-scissor/master/screencap/Resize Contain.png" class="img-fluid mb-3">
-    <pre><code class="js">import scissor from &#039;js-scissor&#039;;
+    <h2 id="usage-resize-contain">Resize by specifying width and height (contain)</h2>
+    <p>Resize to fit the specified size while maintaining the aspect ratio.Blank areas are filled with the background color (default is black).</p>
+    <img src="img/Resize Contain.png" class="img-fluid mb-3">
+    <pre><code class="js">import Scissor from &#039;js-scissor&#039;;
 
 // HTML: &lt;img id=&quot;src4&quot; src=&quot;img/sample1.jpg&quot;&gt;
 //       &lt;img id=&quot;dest4&quot;&gt;
 let src = document.querySelector(&#039;#src4&#039;);
 let dest = document.querySelector(&#039;#dest4&#039;);
-dest.src = (await scissor(src).resize(100, 150, {fit: &#039;cover&#039;})).toBase64();</code></pre>
+dest.src = (await new Scissor(src).resize(100, 225, {fit: &#039;contain&#039;})).toBase64();</code></pre>
+
+    <h2 id="usage-resize-fill">Resize by specifying width and height (fill)</h2>
+    <p>Resize to the specified size without keeping the aspect ratio.</p>
+    <img src="img/Resize Fill.png" class="img-fluid mb-3">
+    <pre><code class="js">import Scissor from &#039;js-scissor&#039;;
+
+// HTML: &lt;img id=&quot;src5&quot; src=&quot;img/sample1.jpg&quot;&gt;
+//       &lt;img id=&quot;dest5&quot;&gt;
+let src = document.querySelector(&#039;#src5&#039;);
+let dest = document.querySelector(&#039;#dest5&#039;);
+dest.src = (await new Scissor(src).resize(100, 225)).toBase64();</code></pre>
+
+    <h2 id="usage-resize-from-url">Resize the image read from the URL.</h2>
+    <img src="img/Resize from URL.png" class="img-fluid mb-3">
+    <pre><code class="js">import Scissor from &#039;js-scissor&#039;;
+
+// HTML: &lt;img src=&quot;img/sample2.png&quot;&gt;
+//       &lt;img id=&quot;dest6&quot;&gt;
+let dest = document.querySelector(&#039;#dest6&#039;);
+dest.src = (await new Scissor(&#039;img/sample2.png&#039;).resize(100, 225, {fit: &#039;cover&#039;})).toBase64();</code></pre>
     <!--end::Usage-->
 
-    <!--begin::Comparison helper-->
-    <h1 id="comparison-helper">Comparison helper</h1>
+    <!--begin::Class Scissor-->
+    <h1 id="class-scissor">Class Scissor</h1>
+    <p>This is a class that receives an image element, canvas element, and image URL in the constructor and outputs the edited result of the received image data.</p>
 
-    <!--begin::Summary-->
-    <h2 id="comparison-helper-summary">Summary</h2>
-    <table class="table table-bordered table-striped">
+    <h2 id="class-scissor-methods">Methods</h2>
+
+    <table class="table table-bordered">
       <thead class="table-light">
-        <tr class="text-nowrap">
-          <th>Helper</th>
+        <tr>
+          <th>Method</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="min-w-150px"><a href="#comparison-helper-opr">opr</a></td>
-          <td class="min-w-200px w-100">Compare two values using operators.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#comparison-helper-eq">eq</a></td>
-          <td class="min-w-200px w-100">Strict equality <code>===</code>.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#comparison-helper-eqw">eqw</a></td>
-          <td class="min-w-200px w-100">Equality <code>==</code>.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#comparison-helper-neq">neq</a></td>
-          <td class="min-w-200px w-100">Strict inequality <code>!==</code>.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#comparison-helper-neqw">neqw</a></td>
-          <td class="min-w-200px w-100">Inequality <code>!=</code>.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#comparison-helper-lt">lt</a></td>
-          <td class="min-w-200px w-100">Less than <code>&lt;</code>.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#comparison-helper-gt">gt</a></td>
-          <td class="min-w-200px w-100">Greater than <code>&gt;</code>.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#comparison-helper-lte">lte</a></td>
-          <td class="min-w-200px w-100">Less than or equal <code>&lt;=</code>.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#comparison-helper-gte">gte</a></td>
-          <td class="min-w-200px w-100">Greater than or equal <code>&gt;=</code>.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#comparison-helper-ifx">ifx</a></td>
-          <td class="min-w-200px w-100">Imitates conditional operator <code>?:</code>.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#comparison-helper-not">not</a></td>
-          <td class="min-w-200px w-100">Not <code>!</code>.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#comparison-helper-empty">empty</a></td>
-          <td class="min-w-200px w-100">Check if an array is empty.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#comparison-helper-count">count</a></td>
-          <td class="min-w-200px w-100">Length of an array.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#comparison-helper-and">and</a></td>
-          <td class="min-w-200px w-100">Logical AND operation.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#comparison-helper-or">or</a></td>
-          <td class="min-w-200px w-100">Logical OR operation.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#comparison-helper-coalesce">coalesce</a></td>
-          <td class="min-w-200px w-100">Returns first non-falsy value from list of parameters.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#comparison-helper-includes">includes</a></td>
-          <td class="min-w-200px w-100">Check for a value inside an array.</td>
-        </tr>
-      </tbody>
-    </table>
-    <!--end::Summary-->
-
-    <!--begin::opr-->
-    <h2 id="comparison-helper-opr" class="text-primary">{{opr}}</h2>
-    <p>Compare two values using operators.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
-      <li><code>&#039;==&#039;|&#039;===&#039;|&#039;!=&#039;|&#039;!==&#039;|&#039;&lt;&#039;|&#039;&gt;&#039;|&#039;&lt;=&#039;|&#039;&gt;=&#039;</code> <strong>opr</strong>  The operator to use. Operators must be enclosed in quotes: `&quot;&gt;&quot;`, `&quot;=&quot;`, `&quot;&lt;=&quot;`, and so on.</li>
-      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: false
-hbs.compile(&quot;{{opr a &#039;===&#039; b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
-
-// Output: false
-hbs.compile(&quot;{{#if (opr a &#039;===&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
-
-// Output: true
-hbs.compile(&quot;{{opr a &#039;==&#039; b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
-
-// Output: true
-hbs.compile(&quot;{{#if (opr a &#039;==&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
-
-// Output: true
-hbs.compile(&quot;{{opr a &#039;!==&#039; b}}&quot;)({&quot;a&quot;:4,&quot;b&quot;:3});
-
-// Output: true
-hbs.compile(&quot;{{#if (opr a &#039;!==&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:4,&quot;b&quot;:3});
-
-// Output: false
-hbs.compile(&quot;{{opr a &#039;!=&#039; b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
-
-// Output: false
-hbs.compile(&quot;{{#if (opr a &#039;!=&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
-
-// Output: true
-hbs.compile(&quot;{{opr a &#039;&lt;&#039; b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
-
-// Output: true
-hbs.compile(&quot;{{#if (opr a &#039;&lt;&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
-
-// Output: false
-hbs.compile(&quot;{{opr a &#039;&gt;&#039; b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
-
-// Output: false
-hbs.compile(&quot;{{#if (opr a &#039;&gt;&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
-
-// Output: true
-hbs.compile(&quot;{{opr a &#039;&lt;=&#039; b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
-
-// Output: true
-hbs.compile(&quot;{{#if (opr a &#039;&lt;=&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
-
-// Output: true
-hbs.compile(&quot;{{opr a &#039;&gt;=&#039; b}}&quot;)({&quot;a&quot;:3,&quot;b&quot;:3});
-
-// Output: true
-hbs.compile(&quot;{{#if (opr a &#039;&gt;=&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:3,&quot;b&quot;:3});
-</code></pre>
-    <!--end::opr-->
-
-    <!--begin::eq-->
-    <h2 id="comparison-helper-eq" class="text-primary">{{eq}}</h2>
-    <p>Determine whether or not two values are equal (===).</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
-      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: false
-hbs.compile(&quot;{{eq a b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
-
-// Output: false
-hbs.compile(&quot;{{#if (eq a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});</code></pre>
-    <!--end::eq-->
-
-    <!--begin::eqw-->
-    <h2 id="comparison-helper-eqw" class="text-primary">{{eqw}}</h2>
-    <p>Determine whether or not two values are equal (==) i.e weak checking.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
-      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: true
-hbs.compile(&quot;{{eqw a b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
-
-// Output: true
-hbs.compile(&quot;{{#if (eqw a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});</code></pre>
-    <!--end::eqw-->
-    
-    <!--begin::neq-->
-    <h2 id="comparison-helper-neq" class="text-primary">{{neq}}</h2>
-    <p>Determine whether or not two values are not equal (!==).</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
-      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: true
-hbs.compile(&quot;{{neq a b}}&quot;)({&quot;a&quot;:4,&quot;b&quot;:3});
-
-// Output: true
-hbs.compile(&quot;{{#if (neq a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:4,&quot;b&quot;:3});</code></pre>
-    <!--end::neq-->
-
-    <!--begin::neqw-->
-    <h2 id="comparison-helper-neqw" class="text-primary">{{neqw}}</h2>
-    <p>Determine whether or not two values are not equal (!=) weak checking.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
-      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: false
-hbs.compile(&quot;{{neqw a b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
-
-// Output: false
-hbs.compile(&quot;{{#if (neqw a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});</code></pre>
-    <!--end::neqw-->
-
-    <!--begin::lt-->
-    <h2 id="comparison-helper-lt" class="text-primary">{{lt}}</h2>
-    <p>Check for less than condition (a &lt; b).</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
-      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: true
-hbs.compile(&quot;{{lt a b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
-
-// Output: true
-hbs.compile(&quot;{{#if (lt a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});</code></pre>
-    <!--end::lt-->
-
-    <!--begin::gt-->
-    <h2 id="comparison-helper-gt" class="text-primary">{{gt}}</h2>
-    <p>Check for greater than condition (a &gt; b).</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
-      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: false
-hbs.compile(&quot;{{gt a b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
-
-// Output: false
-hbs.compile(&quot;{{#if (gt a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});</code></pre>
-    <!--end::gt-->
-
-    <!--begin::lte-->
-    <h2 id="comparison-helper-lte" class="text-primary">{{lte}}</h2>
-    <p>Check for less than or equals condition (a &lt;= b).</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
-      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: false
-hbs.compile(&quot;{{lte a &#039;&lt;=&#039; b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
-
-// Output: false
-hbs.compile(&quot;{{#if (lte a &#039;&lt;=&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});</code></pre>
-    <!--end::lte-->
-
-    <!--begin::gte-->
-    <h2 id="comparison-helper-gte" class="text-primary">{{gte}}</h2>
-    <p>Check for greater than or equals condition (a &gt;= b).</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
-      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: false
-hbs.compile(&quot;{{gte a &#039;&gt;=&#039; b}}&quot;)({&quot;a&quot;:3,&quot;b&quot;:3});
-
-// Output: false
-hbs.compile(&quot;{{#if (gte a &#039;&gt;=&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:3,&quot;b&quot;:3});</code></pre>
-    <!--end::gte-->
-
-    <!--begin::ifx-->
-    <h2 id="comparison-helper-ifx" class="text-primary">{{ifx}}</h2>
-    <p>Helper to imitate the ternary &#039;?:&#039; conditional operator.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>any</code> <strong>val1</strong> Value to return when the condition holds true.</li>
-      <li><code>any</code> <strong>val2</strong> Value to return when the condition is false (Optional).</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: foo
-hbs.compile(&quot;{{ifx true a b}}&quot;)({&quot;a&quot;:&quot;foo&quot;,&quot;b&quot;:&quot;bar&quot;});
-
-// Output: bar
-hbs.compile(&quot;{{ifx false a b}}&quot;)({&quot;a&quot;:&quot;foo&quot;,&quot;b&quot;:&quot;bar&quot;});</code></pre>
-    <!--end::ifx-->
-
-    <!--begin::not-->
-    <h2 id="comparison-helper-not" class="text-primary">{{not}}</h2>
-    <p>Logical NOT of any expression.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>any</code> <strong>expr</strong> Any expression.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: false
-hbs.compile(&quot;{{not true}}&quot;)();
-
-// Output: false
-hbs.compile(&quot;{{#if (not true)}}true{{else}}false{{/if}}&quot;)();
-
-// Output: true
-hbs.compile(&quot;{{not false}}&quot;)();
-
-// Output: true
-hbs.compile(&quot;{{#if (not false)}}true{{else}}false{{/if}}&quot;)();</code></pre>
-    <!--end::not-->
-
-    <!--begin::empty-->
-    <h2 id="comparison-helper-empty" class="text-primary">{{empty}}</h2>
-    <p>Check if an array is empty.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>any[]</code> <strong>coll</strong> Array/object to be checked.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: true
-hbs.compile(&quot;{{empty coll}}&quot;)({&quot;coll&quot;:[]});
-
-// Output: true
-hbs.compile(&quot;{{#if (empty coll)}}true{{else}}false{{/if}}&quot;)({&quot;coll&quot;:[]});
-
-// Output: false
-hbs.compile(&quot;{{empty coll}}&quot;)({&quot;coll&quot;:[&quot;foo&quot;]});
-
-// Output: false
-hbs.compile(&quot;{{#if (empty coll)}}true{{else}}false{{/if}}&quot;)({&quot;coll&quot;:[&quot;foo&quot;]});</code></pre>
-    <!--end::empty-->
-
-    <!--begin::count-->
-    <h2 id="comparison-helper-count" class="text-primary">{{count}}</h2>
-    <p>Determine the length of an array.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>any[]</code> <strong>coll</strong> Array whose elements to be counted.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: 2
-hbs.compile(&quot;{{count coll}}&quot;)({&quot;coll&quot;:[&quot;foo&quot;,&quot;bar&quot;]});</code></pre>
-    <!--end::count-->
-
-    <!--begin::and-->
-    <h2 id="comparison-helper-and" class="text-primary">{{and}}</h2>
-    <p>Returns the boolean AND of two or more parameters passed i.e it is true iff all the parameters are true.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>...any</code> <strong>args</strong> Any number of boolean parameters.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: true
-hbs.compile(&quot;{{and a b}}&quot;)({&quot;a&quot;:true,&quot;b&quot;:true});
-
-// Output: true
-hbs.compile(&quot;{{#if (and a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:true,&quot;b&quot;:true});
-
-// Output: false
-hbs.compile(&quot;{{and a b}}&quot;)({&quot;a&quot;:false,&quot;b&quot;:true});
-
-// Output: false
-hbs.compile(&quot;{{#if (and a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:false,&quot;b&quot;:true});</code></pre>
-    <!--end::and-->
-
-    <!--begin::or-->
-    <h2 id="comparison-helper-or" class="text-primary">{{or}}</h2>
-    <p>Returns the boolean OR of two or more parameters passed i.e it is true if any of the parameters is true.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>...any</code> <strong>args</strong> Any number of boolean parameters.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: true
-hbs.compile(&quot;{{or a b}}&quot;)({&quot;a&quot;:true,&quot;b&quot;:false});
-
-// Output: true
-hbs.compile(&quot;{{#if (or a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:true,&quot;b&quot;:false});
-
-// Output: false
-hbs.compile(&quot;{{or a b}}&quot;)({&quot;a&quot;:false,&quot;b&quot;:false});
-
-// Output: false
-hbs.compile(&quot;{{#if (or a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:false,&quot;b&quot;:false});</code></pre>
-    <!--end::or-->
-
-    <!--begin::coalesce-->
-    <h2 id="comparison-helper-coalesce" class="text-primary">{{coalesce}}</h2>
-    <p>Returns the first non-falsy value from the parameter list.<br>Checks for the first non-false parameter.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>...any</code> <strong>args</strong> Any number of parameters.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: foo
-hbs.compile(&quot;{{coalesce a b c}}&quot;)({&quot;a&quot;:&quot;foo&quot;,&quot;b&quot;:&quot;bar&quot;,&quot;c&quot;:&quot;baz&quot;});
-
-// Output: bar
-hbs.compile(&quot;{{coalesce a b c}}&quot;)({&quot;a&quot;:&quot;&quot;,&quot;b&quot;:&quot;bar&quot;,&quot;c&quot;:&quot;baz&quot;});
-</code></pre>
-    <!--end::or-->
-
-    <!--begin::includes-->
-    <h2 id="comparison-helper-includes" class="text-primary">{{includes}}</h2>
-    <p>Returns true if the array contains a particular value, false if it does not.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>any[]</code> <strong>coll</strong> The array.</li>
-      <li><code>any</code> <strong>val</strong> The value to search for.</li>
-      <li><code>boolean</code> <strong>strict</strong> FALSE for non-strict checking. TRUE by default.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: true
-hbs.compile(&quot;{{includes coll a}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:2});
-
-// Output: true
-hbs.compile(&quot;{{#if (includes coll a)}}true{{else}}false{{/if}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:2});
-
-// Output: false
-hbs.compile(&quot;{{includes coll a}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:10});
-
-// Output: false
-hbs.compile(&quot;{{#if (includes coll a)}}true{{else}}false{{/if}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:10});
-
-// Output: false
-hbs.compile(&quot;{{includes coll a}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:&quot;3&quot;});
-
-// Output: false
-hbs.compile(&quot;{{#if (includes coll a)}}true{{else}}false{{/if}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:&quot;3&quot;});
-
-// Output: true
-hbs.compile(&quot;{{includes coll a strict}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:&quot;3&quot;,&quot;strict&quot;:false});
-
-// Output: true
-hbs.compile(&quot;{{#if (includes coll a strict)}}true{{else}}false{{/if}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:&quot;3&quot;,&quot;strict&quot;:false});</code></pre>
-    <!--end::includes-->
-    <!--end::Comparison helper-->
-
-    <!--begin::Date helper-->
-    <h1 id="date-helper">Date helper</h1>
-
-    <!--begin::Summary-->
-    <h2 id="date-helper-summary">Summary</h2>
-    <table class="table table-bordered table-striped">
-      <thead class="table-light">
-        <tr class="text-nowrap">
-          <th>Helper</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="min-w-150px"><a href="#date-helper-format-date">formatDate</a></td>
-          <td class="min-w-200px w-100">Use moment to format the date.</td>
-        </tr>
-      </tbody>
-    </table>
-    <!--end::Summary-->
-
-    <!--begin::includes-->
-    <h2 id="date-helper-format-date" class="text-primary">{{formatDate}}</h2>
-    <p>Use moment to format the date.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>string</code> <strong>format</strong> A format string based on <a href="https://momentjs.com/docs/#/parsing/string-format/" target="_blank">moment</a>.</li>
-      <li><code>string</code> <strong>date</strong> Date string to format.</li>
-      <li><code>string|string[]</code> <strong>locale</strong> Language or language-country locale string (or array of strings) available in <a href="https://github.com/moment/moment/tree/develop/locale" target="_blank">https://github.com/moment/moment/tree/develop/locale</a>.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: 2021/10/25
-hbs.compile(&quot;{{formatDate &#039;YYYY/MM/DD&#039; date}}&quot;)({&quot;date&quot;:&quot;2021-10-24T23:11:14.275Z&quot;});
-
-// Output: 2021/10/25
-hbs.compile(&quot;{{formatDate &#039;YYYY/MM/DD&#039; date &#039;jp&#039;}}&quot;)({&quot;date&quot;:&quot;2021-10-24T23:11:14.275Z&quot;});
-
-// Output: 2021/10/25
-hbs.compile(&quot;{{formatDate &#039;YYYY/MM/DD&#039; date &#039;es&#039;}}&quot;)({&quot;date&quot;:&quot;2021-10-24T23:11:14.275Z&quot;});</code></pre>
-    <!--end::includes-->
-    <!--begin::Date helper-->
-  
-    <!--begin::HTML helper-->
-    <h1 id="html-helper">HTML helper</h1>
-    <!--begin::Summary-->
-    <h2 id="html-helper-summary">Summary</h2>
-    <table class="table table-bordered table-striped">
-      <thead class="table-light">
-        <tr class="text-nowrap">
-          <th>Helper</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="min-w-150px"><a href="#html-helper-class-if">classIf</a></td>
-          <td class="min-w-200px w-100">Set the CSS classes if the condition is true.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#html-helper-selected-if">selectedIf</a></td>
-          <td class="min-w-200px w-100">Sets the selected attribute if the condition is true.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#html-helper-checked-if">checkedIf</a></td>
-          <td class="min-w-200px w-100">Sets the checked attribute if the condition is true.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#html-helper-options">options</a></td>
-          <td class="min-w-200px w-100">Generates a select drop-down option list.</td>
-        </tr>
-      </tbody>
-    </table>
-    <!--end::Summary-->
-
-    <!--begin::classIf-->
-    <h2 id="html-helper-class-if" class="text-primary">{{classIf}}</h2>
-    <p>Set the CSS classes if the condition is true.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>boolean</code> <strong>expr</strong> Condition to be checked.</li>
-      <li><code>string</code> <strong>cls</strong> CSS class to set if the condition is true.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: foo
-hbs.compile(&quot;{{classIf expr &#039;foo&#039;}}&quot;)({&quot;expr&quot;:true});</code></pre>
-    <!--end::classIf-->
-
-    <!--begin::selectedIf-->
-    <h2 id="html-helper-selected-if" class="text-primary">{{selectedIf}}</h2>
-    <p>Sets the selected attribute if the condition is true.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>boolean</code> <strong>expr</strong> Condition to be checked.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: selected
-hbs.compile(&quot;{{selectedIf expr}}&quot;)({&quot;expr&quot;:true});</code></pre>
-    <!--end::selectedIf-->
-
-    <!--begin::checkedIf-->
-    <h2 id="html-helper-checked-if" class="text-primary">{{checkedIf}}</h2>
-    <p>Sets the checked attribute if the condition is true.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>boolean</code> <strong>expr</strong> Condition to be checked.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: checked
-hbs.compile(&quot;{{checkedIf expr}}&quot;)({&quot;expr&quot;:true});</code></pre>
-    <!--end::checkedIf-->
-
-    <!--begin::options-->
-    <h2 id="html-helper-options" class="text-primary">{{options}}</h2>
-    <p>Generates a select drop-down option list.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>{[key: string]: string}[]</code> <strong>data</strong> List of data.</li>
-      <li><code>{value: string, text: string}</code> <strong>opts</strong> Key names for the selected and displayed values of option in the data element (Optional).</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: &lt;option value=&quot;1&quot;&gt;foo&lt;/option&gt;
-//         &lt;option value=&quot;2&quot; selected&gt;bar&lt;/option&gt;
-hbs.compile(&quot;{{{options data selected=&#039;2&#039;}}}&quot;)({&quot;data&quot;:[{&quot;value&quot;:1,&quot;text&quot;:&quot;foo&quot;},{&quot;value&quot;:2,&quot;text&quot;:&quot;bar&quot;}]});
-
-// Output: &lt;option value=&quot;392&quot; selected&gt;JAPAN&lt;/option&gt;
-//         &lt;option value=&quot;840&quot;&gt;UNITED STATES&lt;/option&gt;
-hbs.compile(&quot;{{{options data selected=&#039;392&#039; value=&#039;code&#039; text=&#039;name&#039;}}}&quot;)({&quot;data&quot;:[{&quot;code&quot;:392,&quot;name&quot;:&quot;JAPAN&quot;},{&quot;code&quot;:840,&quot;name&quot;:&quot;UNITED STATES&quot;}]});</code></pre>
-    <!--end::options-->
-    <!--end::HTML helper-->
-
-    <!--begin::Math helper-->
-    <h1 id="math-helper">Math helper</h1>
-    <!--begin::Summary-->
-    <h2 id="math-helper-summary">Summary</h2>
-    <table class="table table-bordered table-striped">
-      <thead class="table-light">
-        <tr class="text-nowrap">
-          <th>Helper</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="min-w-150px"><a href="#math-helper-add">add</a></td>
-          <td class="min-w-200px w-100">Calculates the sum of two numbers.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#math-helper-sub">sub</a></td>
-          <td class="min-w-200px w-100">Calculates the difference of the given values.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#math-helper-ceil">ceil</a></td>
-          <td class="min-w-200px w-100">Round up the value.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#math-helper-floor">floor</a></td>
-          <td class="min-w-200px w-100">Rounds down a number.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#math-helper-abs">abs</a></td>
-          <td class="min-w-200px w-100">Returns an absolute value.</td>
-        </tr>
-      </tbody>
-    </table>
-    <!--end::Summary-->
-
-    <!--begin::add-->
-    <h2 id="math-helper-add" class="text-primary">{{add}}</h2>
-    <p>Calculates the sum of two numbers.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>number|string</code> <strong>val1</strong> The first number.</li>
-      <li><code>number|string</code> <strong>val2</strong> The second number.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: 3
-hbs.compile(&quot;{{add a b}}&quot;)({&quot;a&quot;:1,&quot;b&quot;:2});</code></pre>
-    <!--end::add-->
-
-    <!--begin::sub-->
-    <h2 id="math-helper-sub" class="text-primary">{{sub}}</h2>
-    <p>Calculates the difference of the given values.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>number|string</code> <strong>val1</strong> The first number.</li>
-      <li><code>number|string</code> <strong>val2</strong> The second number.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: 3
-hbs.compile(&quot;{{sub a b}}&quot;)({&quot;a&quot;:5,&quot;b&quot;:2});</code></pre>
-    <!--end::sub-->
-
-    <!--begin::ceil-->
-    <h2 id="math-helper-ceil" class="text-primary">{{ceil}}</h2>
-    <p>Round up the value.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>number|string</code> <strong>val</strong> Number to be rounded to nearest greater integer.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: 6
-hbs.compile(&quot;{{ceil a}}&quot;)({&quot;a&quot;:5.6});</code></pre>
-    <!--end::ceil-->
-
-    <!--begin::floor-->
-    <h2 id="math-helper-floor" class="text-primary">{{floor}}</h2>
-    <p>Rounds down a number.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>number|string</code> <strong>val</strong> Number to be rounded to nearest lower integer.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: 5
-hbs.compile(&quot;{{floor a}}&quot;)({&quot;a&quot;:5.6});</code></pre>
-    <!--end::floor-->
-
-    <!--begin::abs-->
-    <h2 id="math-helper-abs" class="text-primary">{{abs}}</h2>
-    <p>Returns an absolute value.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>number|string</code> <strong>val</strong> Number to perform absolute value operation on.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: 5.6
-hbs.compile(&quot;{{abs a b}}&quot;)({&quot;a&quot;:-5.6});</code></pre>
-    <!--end::abs-->
-    <!--end::Math helper-->
-  
-    <!--begin::String helper-->
-    <h1 id="string-helper">String helper</h1>
-    <!--begin::Summary-->
-    <h2 id="string-helper-summary">Summary</h2>
-    <table class="table table-bordered table-striped">
-      <thead class="table-light">
-        <tr class="text-nowrap">
-          <th>Helper</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="min-w-150px"><a href="#string-helper-slice">slice</a></td>
-          <td class="min-w-200px w-100">Extract a portion of a string.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#string-helper-nltobr">nltobr</a></td>
-          <td class="min-w-200px w-100">Replace \n with &lt;br&gt; tags.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#string-helper-sprintf">sprintf</a></td>
+          <td class="min-w-300px text-primary fw-bolder">public constructor(target: HTMLImageElement|HTMLCanvasElement|string)</td>
           <td class="min-w-200px w-100">
-            Returns a string produced according to the formatting string format.<br>
-            It uses sprintf-js internally.<br>
-            Check <a href="https://github.com/alexei/sprintf.js" target="_blank">https://github.com/alexei/sprintf.js</a> for more information.
+            <p>Constructs a Scissor object.</p>
+            <p class="fw-bolder mb-0">Params:</p>
+            <ul>
+              <li><span class="text-primary">{HTMLImageElement|HTMLCanvasElement|string}</span> target HTMLImageElement, HTMLCanvasElement, image URL, image in DataURL format.</li>
+            </ul>
+            <p class="fw-bolder mb-0">Example:</p>
+            <pre><code class="js">import Scissor from &#039;js-scissor&#039;;
+
+let siz;
+
+// Specify an image element for editing.
+// HTML: &lt;img id=&quot;img&quot; src=&quot;img/sample1.jpg&quot;&gt;
+siz = new Scissor(document.querySelector(&#039;#img&#039;));
+
+// Specify a canvas element for editing.
+// HTML: &lt;canvas id=&quot;cvs&quot;&gt;&lt;/canvas&gt;
+siz = new Scissor(document.querySelector(&#039;#cvs&#039;));
+
+// Specify the image URL for editing.
+siz = new Scissor(&#039;img/sample1.jpg&#039;);
+siz = new Scissor(&#039;https://example.com/img/sample1.jpg&#039;);</code></pre>
           </td>
         </tr>
         <tr>
-          <td class="min-w-150px"><a href="#string-helper-lowercase">lowercase</a></td>
-          <td class="min-w-200px w-100">Changes the string to lowercase.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#string-helper-uppercase">uppercase</a></td>
-          <td class="min-w-200px w-100">Changes the string to uppercase.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#string-helper-concat">concat</a></td>
-          <td class="min-w-200px w-100">Concat two or more strings.</td>
-        </tr>
-        <tr>
-          <td class="min-w-150px"><a href="#string-helper-join">join</a></td>
-          <td class="min-w-200px w-100">Join the elements of an array using a delimeter.</td>
+          <td class="min-w-300px text-primary fw-bolder">
+            public async resize(
+              width: number|null,
+              height?: number|null,
+              opts?: {
+                fit?: &#039;fill&#039;|&#039;cover&#039;|&#039;contain&#039;,
+                background?: string,
+                format?: &#039;image/webp&#039;|&#039;image/png&#039;|&#039;image/jpeg&#039;
+              }
+            ): Promise&lt;<a href="#class-output">Output</a>&gt;
+          </td>
+          <td class="min-w-200px w-100">
+            <p>Resizes the image and returns an "Output" object that can retrieve the resized image data in various formats.</p>
+            <p class="fw-bolder mb-0">Params:</p>
+            <ul>
+              <li><span class="text-primary">{number|null}</span> width Resize width. If the width is omitted, the height of the parameter is required.</li>
+              <li><span class="text-primary">{number|null}</span> height Resize height. If the height is omitted, the parameter width is required.</li>
+              <li><span class="text-primary">{&#039;fill&#039;|&#039;cover&#039;|&#039;contain&#039;}</span> options.fit Image embedding method in the area after resizing, default is &#039;fill&#039;.</li>
+              <li><span class="text-primary">{string}</span> options.background Background color, default is &#039;#000&#039;.</li>
+              <li><span class="text-primary">{&#039;image/webp&#039;|&#039;image/png&#039;|&#039;image/jpeg&#039;}</span> options.format Image format after resizing, default is &#039;image/png&#039;.</li>
+            </ul>
+            <p class="fw-bolder mb-0">Return:</p>
+            <p><span class="text-primary">{Promise&lt;<a href="#class-output">Output</a>&gt;}</span> Returns an &quot;output&quot; object that can retrieve resized image data in various formats.</p>
+            <p class="fw-bolder mb-0">Example:</p>
+            <pre><code class="js">import Scissor from &#039;js-scissor&#039;;
+
+const siz = new Scissor(&#039;https://example.com/img/sample2.png&#039;);
+let res, base64;
+
+// Resize width.
+res = await siz.resize(100);
+base64 = res.toBase64();// Get the resized image as base64.
+
+// Resize height.
+res = await siz.resize(null, 100);
+base64 = res.toBase64();// Get the resized image as base64.
+
+// Resize by specifying width and height (cover)
+// Resize so that the center is cut off while maintaining the aspect ratio.
+res = await siz.resize(100, 225, {fit: &#039;cover&#039;});
+base64 = res.toBase64();// Get the resized image as base64.
+
+// Resize by specifying width and height (contain)
+// Resize to fit the specified size while maintaining the aspect ratio.
+res = await siz.resize(100, 225, {fit: &#039;contain&#039;});
+base64 = res.toBase64();// Get the resized image as base64.
+
+// Resize by specifying width and height (fill)
+// Resize to the specified size without keeping the aspect ratio.
+res = await siz.resize(100, 225);
+base64 = res.toBase64();// Get the resized image as base64.</code></pre>
+          </td>
         </tr>
       </tbody>
     </table>
-    <!--end::Summary-->
+    <!--end::Class Scissor-->
 
-    <!--begin::slice-->
-    <h2 id="string-helper-slice" class="text-primary">{{slice}}</h2>
-    <p>Extract a portion of a string.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>string</code> <strong>val</strong> Target string.</li>
-      <li><code>number</code> <strong>beginIdx</strong> The zero-based index at which to begin extraction.</li>
-      <li><code>number</code> <strong>endIdx</strong> The zero-based index before which to end extraction. The character at this index will not be included.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: Just
-hbs.compile(&quot;{{slice str 0 4}}&quot;)({&quot;str&quot;:&quot;Just Wow&quot;});
+    <!--begin::Class Output-->
+    <h1 id="class-output">Class Output</h1>
+    <p>A class that converts resized images into various formats.</p>
+    
+    <h2 id="class-output-methods">Methods</h2>
 
-// Output: Wow
-hbs.compile(&quot;{{slice str 5}}&quot;)({&quot;str&quot;:&quot;Just Wow&quot;});
+    <table class="table table-bordered">
+      <thead class="table-light">
+        <tr>
+          <th>Method</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="min-w-300px text-primary fw-bolder">public constructor(cvs: HTMLCanvasElement, format: &#039;image/webp&#039;|&#039;image/png&#039;|&#039;image/jpeg&#039;)</td>
+          <td class="min-w-200px w-100">
+            <p>Constructs a Output object.</p>
+            <p class="fw-bolder mb-0">Params:</p>
+            <ul>
+              <li><span class="text-primary">{HTMLCanvasElement}</span> cvs Converted image canvas element.</li>
+              <li><span class="text-primary">{&#039;image/webp&#039;|&#039;image/png&#039;|&#039;image/jpeg&#039;}</span> format Image format after resizing.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="min-w-300px text-primary fw-bolder">public toBase64(): string</td>
+          <td class="min-w-200px w-100">
+            <p>Returns the resized image in base64 format.</p>
+            <p class="fw-bolder mb-0">Return:</p>
+            <p><span class="text-primary">{string}</span> Base64 data of the image after resizing, e.g. data:image/png;base64, iVB...</p>
+            <p class="fw-bolder mb-0">Example:</p>
+            <pre><code class="js">import Scissor from &#039;js-scissor&#039;;
 
-// Output:  Wow
-hbs.compile(&quot;{{slice str -4}}&quot;)({&quot;str&quot;:&quot;Just Wow&quot;});</code></pre>
-    <!--end::slice-->
+const siz = new Scissor(&#039;https://example.com/img/sample2.png&#039;);
+const res = await siz.resize(100);
+const base64 = res.toBase64();</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td class="min-w-300px text-primary fw-bolder">public toImage(): HTMLImageElement</td>
+          <td class="min-w-200px w-100">
+            <p>Returns the resized image as an image element.</p>
+            <p class="fw-bolder mb-0">Return:</p>
+            <p><span class="text-primary">{HTMLImageElement}</span> The image element of the resized image.</p>
+            <p class="fw-bolder mb-0">Example:</p>
+            <pre><code class="js">import Scissor from &#039;js-scissor&#039;;
 
-    <!--begin::nltobr-->
-    <h2 id="string-helper-nltobr" class="text-primary">{{nltobr}}</h2>
-    <p>Replace \n with &lt;br&gt; tags.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>string</code> <strong>val</strong> Target string.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: It&#039;s&lt;br&gt;just&lt;br&gt;now
-hbs.compile(&quot;{{{nltobr str}}}&quot;)({&quot;str&quot;:&quot;It&#039;s\njust\nnow&quot;});</code></pre>
-    <!--end::nltobr-->
+const siz = new Scissor(&#039;https://example.com/img/sample2.png&#039;);
+const res = await siz.resize(100);
+const img = res.toImage();</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td class="min-w-300px text-primary fw-bolder">public toBlob(): Blob</td>
+          <td class="min-w-200px w-100">
+            <p>Returns the blob data for the resized image.</p>
+            <p class="fw-bolder mb-0">Return:</p>
+            <p><span class="text-primary">{Blob}</span> Blob data for resized images.</p>
+            <p class="fw-bolder mb-0">Example:</p>
+            <pre><code class="js">import Scissor from &#039;js-scissor&#039;;
 
-    <!--begin::sprintf-->
-    <h2 id="string-helper-sprintf" class="text-primary">{{sprintf}}</h2>
-    <p>
-      Returns a string produced according to the formatting string format.<br>
-      It uses sprintf-js internally.<br>
-      Check <a href="https://github.com/alexei/sprintf.js" target="_blank">https://github.com/alexei/sprintf.js</a> for more information.
-    </p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>string</code> <strong>format</strong> Format string.</li>
-      <li><code>...any</code> <strong>args</strong> Any number of parameters/values.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Argument swapping:
-// Output: Hello Dolly!
-hbs.compile(&quot;{{sprintf &#039;%s %s!&#039; str1 str2}}&quot;)({&quot;str1&quot;:&quot;Hello&quot;,&quot;str2&quot;:&quot;Dolly&quot;});
+const siz = new Scissor(&#039;https://example.com/img/sample2.png&#039;);
+const res = await siz.resize(100);
+const blob = res.toBlob();</code></pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!--end::Class Output-->
 
-// Output: foo bar 55 baz 20
-hbs.compile(&quot;{{sprintf &#039;%s %s %d %s %d&#039; &#039;foo&#039; &#039;bar&#039; 55 &#039;baz&#039; &#039;20&#039;}}&quot;)();
-
-// Named arguments:
-// Output: Hello Dolly
-hbs.compile(&quot;{{sprintf &#039;Hello %(name)s&#039; user}}&quot;)({&quot;user&quot;:{&quot;name&quot;:&quot;Dolly&quot;}});
-
-// Output: Hello Dolly
-hbs.compile(&quot;{{sprintf &#039;Hello %(name)s&#039; name=str}}&quot;)({&quot;str&quot;:&quot;Dolly&quot;});</code></pre>
-    <!--end::sprintf-->
-
-    <!--begin::lowercase-->
-    <h2 id="string-helper-lowercase" class="text-primary">{{lowercase}}</h2>
-    <p>Changes the string to lowercase.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>string</code> <strong>val</strong> Target string.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: just wow
-hbs.compile(&quot;{{lowercase str}}&quot;)({&quot;str&quot;:&quot;JUST WOW&quot;});</code></pre>
-    <!--end::lowercase-->
-
-    <!--begin::uppercase-->
-    <h2 id="string-helper-uppercase" class="text-primary">{{uppercase}}</h2>
-    <p>Changes the string to uppercase.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>string</code> <strong>val</strong> Target string.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: JUST WOW
-hbs.compile(&quot;{{uppercase str}}&quot;)({&quot;str&quot;:&quot;just wow&quot;});</code></pre>
-    <!--end::uppercase-->
-
-    <!--begin::concat-->
-    <h2 id="string-helper-concat" class="text-primary">{{concat}}</h2>
-    <p>Concat two or more strings.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>...string</code> <strong>args</strong> Any number of string arguments.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: Hello world!
-hbs.compile(&quot;{{concat &#039;Hello&#039; &#039; world&#039; &#039;!&#039;}}&quot;)();</code></pre>
-    <!--end::concat-->
-
-    <!--begin::join-->
-    <h2 id="string-helper-join" class="text-primary">{{join}}</h2>
-    <p>Join the elements of an array using a delimeter.</p>
-    <p class="fw-bolder mb-0">Params:</p>
-    <ul>
-      <li><code>string[]</code> <strong>coll</strong> An array of elements to be joined.</li>
-      <li><code>string</code> <strong>delim</strong> A delimiter that joins array elements.</li>
-    </ul>
-    <p class="fw-bolder mb-0">Example:</p>
-    <pre><code class="js">// Output: Hands &amp; legs &amp; feet
-hbs.compile(&quot;{{{join coll &#039; &amp; &#039;}}}&quot;)({&quot;coll&quot;:[&quot;Hands&quot;,&quot;legs&quot;,&quot;feet&quot;]});</code></pre>
-    <!--end::join-->
-    <!--end::String helper-->
   </main>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
-<script src="scripts/docs.js"></script>
+<script src="js/docs.js"></script>
 </body>
 </html>
