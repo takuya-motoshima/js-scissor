@@ -1,6 +1,6 @@
 {
   "name": "js-scissor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Resize the image and get the resized image in various formats such as Base64, Blob, image elements and so on.",
   "main": "dist/build.common.js",
   "module": "dist/build.esm.js",
